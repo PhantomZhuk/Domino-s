@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domino`s</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'
+        integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=='
+        crossorigin='anonymous'></script>
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+        rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css'
+        integrity='sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ=='
+        crossorigin='anonymous' />
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">
+                <img src="./img/blue-logo.avif" alt="" class="imgLogo">
+            </div>
+            <!-- Навігація -->
+            <nav>
+                <ul class="controlsContainer">
+                    <li class="controlsItem shares">Акції</li>
+                    <li class="controlsItem pizzaContainer">Піца</li>
+                    <li class="controlsItem drinks">Напої</li>
+                    <li class="controlsItem sites">Сайди</li>
+                    <li class="controlsItem desserts">Десерти</li>
+                    <li class="controlsItem pizzaConstructor">Піца конструктор</li>
+                </ul>
+            </nav>
+            <div class="orderContainer">
+                <!-- Корзина -->
+                <div class="basketContainer">
+                    <p class="txtNmberOrders">00</p>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <!-- Ціна замовелнь -->
+                <div class="priceOrder">
+                    <p class="txtPriceOrder"></p>
+                </div>
+                <!-- Кнопка замовити замовлення -->
+                <button class="btnPlaceOrder">
+                    <p class="txtPlaceOreder">Замовити</p>
+                </button>
+            </div>
+        </header>
+        <!-- Сторінка акцій -->
+        <div class="sharesPage">
+            <!-- Тарілка з піцами -->
+            <div class="plate">
+                <div class="topPlateContainer">
+                    <div class="pizzaItemTop"><img src="./img/imgShares/Barbecu.jpeg" alt="" class="sharesImg"></div>
+                </div>
+                <div class="centerPlateContainer">
+                    <div class="pizzaItemLeft"><img src="./img/imgShares/Karbonara.png" alt="" class="sharesImg"></div>
+                    <div class="pizzaItemRignt"><img src="./img/imgShares/peperoni.jpg" alt="" class="sharesImg"></div>
+                </div>
+                <div class="bottomPlateContainer">
+                    <div class="pizzaItemBottom"><img src="./img/imgShares/Pitstsa-Kantri.png" alt="" class="sharesImg">
+                    </div>
+                </div>
+            </div>
+            <!-- Інформація про акційну піцу -->
+            <div class="actionItemContainer">
+                <p class="nameActionItem"></p>
+                <div class="infoActionItemContainer">
+                    <ul class="ingredientContainer"></ul>
+                </div>
+                <p class="priceItem"></p>
+                <div class="pizzaControlBtnContainer">
+                    <button class="pizzaControlBtn backBtn"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="pizzaControlBtn buyBtn"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                    <button class="pizzaControlBtn nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Сторінка піци -->
+        <div class="pizzaContainerPage">
+            <div class="pizzaContainerSorting">
+
+            </div>
+            <div class="pizzaSelection">
+                <div class="pizzaCard">
+                    <img src="./img/imgPizza/sweetpizza-allergens-fullpizza-ukr.avif" alt="" class="pizzaCardImg">
+                    <div class="txtpizzaCardInfo">
+                        <p class="pizzaCardName">Піца Солодка</p>
+                        <p class="pizzaCardInfo">Солодкий соус, Банан, Моцарела, Шоко паста, Мигдаль, Вишневий бортик
+                        </p>
+                    </div>
+                    <div class="pizzaSelectionSizeContainer">
+                        <div class="pizzaSelectionSizeTop">
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnStandardsweetpizza">Стардартна</button>
+                            <button class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnLargesweetpizza">Велика</button>
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnExtraLargesweetpizza">Екстравелика</button>
+                        </div>
+                        <div class="pizzaSelectionSizeBottom">
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnThelargestsweetpizza">Найбільша</button>
+                        </div>
+                    </div>
+                    <div class="pizzaSelectionBoardContainer">
+                        <p>Борт</p>
+                        <button
+                            class="pizzaSelectionBoardBtn pizzaSelectionAddCartBtnCherrysweetpizza">Вишневий</button>
+                    </div>
+                    <div class="pizzaSelectionAddCartContainer ">
+                        <p class="pizzaSelectionPrice pizzaSelectionPricesweetpizza"></p>
+                        <button class="pizzaSelectionAddCartBtn">
+                            <i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик
+                        </button>
+                    </div>
+                </div>
+                <div class="pizzaCard">
+                    <img src="./img/imgPizza/beefandcrispy-pieces.avif" alt="" class="pizzaCardImg">
+                    <div class="txtpizzaCardInfo">
+                        <p class="pizzaCardName">Піца Біф енд Кріспі</p>
+                        <p class="pizzaCardInfo">Соус Барбекю, Огірки мариновані, Моцарела, Болгарський перець,
+                            Помідори,
+                            Кріспі цибулька Яловичина</p>
+                    </div>
+                    <div class="pizzaSelectionSizeContainer">
+                        <div class="pizzaSelectionSizeTop">
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnStandardbeefandcrispy">Стардартна</button>
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnLargebeefandcrispy">Велика</button>
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnExtraLargebeefandcrispy">Екстравелика</button>
+                        </div>
+                        <div class="pizzaSelectionSizeBottom">
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnThelargestbeefandcrispy">Найбільша</button>
+                        </div>
+                    </div>
+                    <div class="pizzaSelectionDoughContainer">
+                        <p>Тісто</p>
+                        <button
+                            class="pizzaSelectionDoughBtnbeefandcrispy pizzaSelectionAddCartBtnLoosebeefandcrispy">Пухке</button>
+                        <button
+                            class="pizzaSelectionDoughBtnbeefandcrispy pizzaSelectionAddCartBtnThinbeefandcrispy">Тонке</button>
+                    </div>
+                    <div class="pizzaSelectionBoardContainer">
+                        <p>Борт</p>
+                        <button
+                            class="pizzaSelectionBoardBtnbeefandcrispy pizzaSelectionAddCartBtnPhiladelphiabeefandcrispy">Філадельфія</button>
+                        <button
+                            class="pizzaSelectionBoardBtnbeefandcrispy pizzaSelectionAddCartBtnHotDogbeefandcrispy">Hot-Dog</button>
+                    </div>
+                    <div class="pizzaSelectionAddCartContainer ">
+                        <p class="pizzaSelectionPrice pizzaSelectionPricebeefandcrispy"></p>
+                        <button class="pizzaSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="pizzaCard">
+                    <img src="./img/imgPizza/pearandbluecheese-bestprice-pieces-ukr.avif" alt="" class="pizzaCardImg">
+                    <p class="pizzaCardName">Піца з грушею і блакитним сиром</p>
+                    <p class="pizzaCardInfo">Соус Альфредо, Бергадер Блю, Моцарела, Груша</p>
+                    <div class="pizzaSelectionSizeContainer">
+                        <div class="pizzaSelectionSizeTop">
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnStandardpearandbluecheese">Стардартна</button>
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnLargepearandbluecheese">Велика</button>
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnExtraLargepearandbluecheese">Екстравелика</button>
+                        </div>
+                        <div class="pizzaSelectionSizeBottom">
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnThelargestpearandbluecheese">Найбільша</button>
+                        </div>
+                    </div>
+                    <div class="pizzaSelectionDoughContainer">
+                        <p>Тісто</p>
+                        <button
+                            class="pizzaSelectionDoughBtnpearandbluecheese pizzaSelectionAddCartBtnLoosepearandbluecheese">Пухке</button>
+                        <button
+                            class="pizzaSelectionDoughBtnpearandbluecheese pizzaSelectionAddCartBtnThinpearandbluecheese">Тонке</button>
+                    </div>
+                    <div class="pizzaSelectionBoardContainer">
+                        <p>Борт</p>
+                        <button
+                            class="pizzaSelectionBoardBtnpearandbluecheese pizzaSelectionAddCartBtnPhiladelphiapearandbluecheese">Філадельфія</button>
+                        <button
+                            class="pizzaSelectionBoardBtnpearandbluecheese pizzaSelectionAddCartBtnHotDogpearandbluecheese">Hot-Dog</button>
+                    </div>
+                    <div class="pizzaSelectionAddCartContainer ">
+                        <p class="pizzaSelectionPrice pizzaSelectionPricepearandbluecheese"></p>
+                        <button class="pizzaSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="pizzaCard">
+                    <img src="./img/imgPizza/jb-c2rtch-fin-min.avif" alt="" class="pizzaCardImg">
+                    <p class="pizzaCardName">Піца Джамайка Бомбастик</p>
+                    <p class="pizzaCardInfo">Соус Domino's, Гриби, Ананас, Моцарела, Халапеньйо, Болгарський перець,
+                        Кукурудза, Курка</p>
+                    <div class="pizzaSelectionSizeContainer">
+                        <div class="pizzaSelectionSizeTop">
+                            <button class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnStandardjb">Стардартна</button>
+                            <button class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnLargejb">Велика</button>
+                            <button
+                                class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnExtraLargejb">Екстравелика</button>
+                        </div>
+                        <div class="pizzaSelectionSizeBottom">
+                            <button class="pizzaSelectionSizeBtn pizzaSelectionSizeBtnThelargestjb">Найбільша</button>
+                        </div>
+                    </div>
+                    <div class="pizzaSelectionDoughContainer">
+                        <p>Тісто</p>
+                        <button class="pizzaSelectionDoughBtnjb pizzaSelectionAddCartBtnLoosejb">Пухке</button>
+                        <button class="pizzaSelectionDoughBtnjb pizzaSelectionAddCartBtnThinjb">Тонке</button>
+                    </div>
+                    <div class="pizzaSelectionBoardContainer">
+                        <p>Борт</p>
+                        <button
+                            class="pizzaSelectionBoardBtnjb pizzaSelectionAddCartBtnPhiladelphiajb">Філадельфія</button>
+                        <button class="pizzaSelectionBoardBtnjb pizzaSelectionAddCartBtnHotDogjb">Hot-Dog</button>
+                    </div>
+                    <div class="pizzaSelectionAddCartContainer ">
+                        <p class="pizzaSelectionPrice pizzaSelectionPricejb"></p>
+                        <button class="pizzaSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Сторінка напоїв -->
+        <div class="drinksPage">
+            <div class="drinksFilterContainer">
+
+            </div>
+            <div class="drinksSelection">
+                <div class="drinksCard">
+                    <div class="drincsImgContainer">
+                        <img src="./img/imgDrinks/imbyr.avif" alt="" class="imgCardDrinks">
+                        <p class="txtDrinksCard">Чай імбир лемонграс</p>
+                    </div>
+                    <div class="drinkVolumeConatiner">
+                        <button class="drinkVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="drinksSelectionAddCartContainer">
+                        <div class="drinksSelectionPrice drinksSelectionPriceimbyr">40 Грн</div>
+                        <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="drinksCard">
+                    <div class="drincsImgContainer">
+                        <img src="./img/imgDrinks/smorodyna.avif" alt="" class="imgCardDrinks">
+                        <p class="txtDrinksCard">Чай смородина базилік</p>
+                    </div>
+                    <div class="drinkVolumeConatiner">
+                        <button class="drinkVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="drinksSelectionAddCartContainer">
+                        <div class="drinksSelectionPrice drinksSelectionPricesmorodyna">40 Грн</div>
+                        <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="drinksCard">
+                    <div class="drincsImgContainer">
+                        <img src="./img/imgDrinks/malyna.avif" alt="" class="imgCardDrinks">
+                        <p class="txtDrinksCard">Чай малина м'ята</p>
+                    </div>
+                    <div class="drinkVolumeConatiner">
+                        <button class="drinkVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="drinksSelectionAddCartContainer">
+                        <div class="drinksSelectionPrice drinksSelectionPricemalyna">40 Грн</div>
+                        <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="drinksCard">
+                    <div class="drincsImgContainer">
+                        <img src="./img/imgDrinks/icepresso-latte.avif" alt="" class="imgCardDrinks">
+                        <p class="txtDrinksCard">Холодний кавовий напій АйсПрессо Латте</p>
+                    </div>
+                    <div class="drinkVolumeConatiner">
+                        <button class="drinkVolumeBtn">
+                            <p>250 ml</p>
+                        </button>
+                    </div>
+                    <div class="drinksSelectionAddCartContainer">
+                        <div class="drinksSelectionPrice drinksSelectionPriceicepressolatte">59 Грн</div>
+                        <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="drinksCard">
+                    <div class="drincsImgContainer">
+                        <img src="./img/imgDrinks/icepresso.avif" alt="" class="imgCardDrinks">
+                        <p class="txtDrinksCard">Холодний кавовий напій АйсПрессо Класік</p>
+                    </div>
+                    <div class="drinkVolumeConatiner">
+                        <button class="drinkVolumeBtn">
+                            <p>250 ml</p>
+                        </button>
+                    </div>
+                    <div class="drinksSelectionAddCartContainer">
+                        <div class="drinksSelectionPrice drinksSelectionPriceicepresso">59 Грн</div>
+                        <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="drinksCard">
+                    <div class="drincsImgContainer">
+                        <img src="./img/imgDrinks/09-bonaquabig.avif" alt="" class="imgCardDrinks">
+                        <p class="txtDrinksCard">BonAqua газована 0,5</p>
+                    </div>
+                    <div class="drinkVolumeConatiner">
+                        <button class="drinkVolumeBtn">
+                            <p>500 ml</p>
+                        </button>
+                    </div>
+                    <div class="drinksSelectionAddCartContainer">
+                        <div class="drinksSelectionPrice drinksSelectionPricebonaquabig">39 Грн</div>
+                        <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="drinksCard">
+                    <div class="drincsImgContainer">
+                        <img src="./img/imgDrinks/ng-min.avif" alt="" class="imgCardDrinks">
+                        <p class="txtDrinksCard">BonAqua газована 0,5</p>
+                    </div>
+                    <div class="drinkVolumeConatiner">
+                        <button class="drinkVolumeBtn">
+                            <p>500 ml</p>
+                        </button>
+                    </div>
+                    <div class="drinksSelectionAddCartContainer">
+                        <div class="drinksSelectionPrice drinksSelectionPricengmin">39 Грн</div>
+                        <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="drinksCard">
+                    <div class="drincsImgContainer">
+                        <img src="./img/imgDrinks/cc-min.avif" alt="" class="imgCardDrinks">
+                        <p class="txtDrinksCard">Coca-Cola</p>
+                    </div>
+                    <div class="drinkVolumeConatiners">
+                        <button class="drinkVolumeBtns drinkVolumeBtnMinCola">
+                            <p>330 ml</p>
+                        </button>
+                        <button class="drinkVolumeBtns drinkVolumeBtnmediumCola">
+                            <p>500 ml</p>
+                        </button>
+                        <button class="drinkVolumeBtns drinkVolumeBtnMaxCola">
+                            <p>750 ml</p>
+                        </button>
+                    </div>
+                    <div class="drinksSelectionAddCartContainer">
+                        <div class="drinksSelectionPrice drinksSelectionPricengminCola"></div>
+                        <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="drinksCard">
+                    <div class="drincsImgContainer">
+                        <img src="./img/imgDrinks/cczero-min.avif" alt="" class="imgCardDrinks">
+                        <p class="txtDrinksCard">Coca-Cola Zero</p>
+                    </div>
+                    <div class="drinkVolumeConatiners">
+                        <button class="drinkVolumeBtns drinkVolumeBtnMinColaZero">
+                            <p>330 ml</p>
+                        </button>
+                        <button class="drinkVolumeBtns drinkVolumeBtnmediumColaZero">
+                            <p>500 ml</p>
+                        </button>
+                        <button class="drinkVolumeBtns drinkVolumeBtnMaxColaZero">
+                            <p>750 ml</p>
+                        </button>
+                    </div>
+                    <div class="drinksSelectionAddCartContainer">
+                        <div class="drinksSelectionPrice drinksSelectionPricengminColaZero"></div>
+                        <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Сторінка сайдів -->
+        <div class="sitesPage">
+            <div class="sitesFilterContainer">
+
+            </div>
+            <div class="sitesSelectionContainer">
+                <div class="sitesCard">
+                    <div class="sitesCardImgConatiner">
+                        <img src="./img/imgSites/box-minirolls-pepperonipeppers-nosauce-withsticker-ukr.avif" alt=""
+                            class="sitesCardImg">
+                        <p class="txtSitesCard">Мініроли з пепероні та перцем</p>
+                    </div>
+                    <div class="sitesVolumeConatiner">
+                        <button class="sitesVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="sitessSelectionAddCartContainer">
+                        <div class="sitessSelectionPrice">99 Грн</div>
+                        <button class="sitessSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="sitesCard">
+                    <div class="sitesCardImgConatiner">
+                        <img src="./img/imgSites/box-minirolls-beefonions-nosauce-withsticker-ukr.avif" alt=""
+                            class="sitesCardImg">
+                        <p class="txtSitesCard">Мініроли із рваною яловичиною та цибулею</p>
+                    </div>
+                    <div class="sitesVolumeConatiner">
+                        <button class="sitesVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="sitessSelectionAddCartContainer">
+                        <div class="sitessSelectionPrice">99 Грн</div>
+                        <button class="sitessSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="sitesCard">
+                    <div class="sitesCardImgConatiner">
+                        <img src="./img/imgSites/box-minirolls-hammushrooms-nosauce-withsticker-ukr.avif" alt=""
+                            class="sitesCardImg">
+                        <p class="txtSitesCard">Мініроли з шинкою та грибами</p>
+                    </div>
+                    <div class="sitesVolumeConatiner">
+                        <button class="sitesVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="sitessSelectionAddCartContainer">
+                        <div class="sitessSelectionPrice">99 Грн</div>
+                        <button class="sitessSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="sitesCard">
+                    <div class="sitesCardImgConatiner">
+                        <img src="./img/imgSites/khlebets-vetchyna-hryby.avif" alt="" class="sitesCardImg">
+                        <p class="txtSitesCard">Хлібці з шинкою та грибами</p>
+                    </div>
+                    <div class="sitesVolumeConatiner">
+                        <button class="sitesVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="sitessSelectionAddCartContainer">
+                        <div class="sitessSelectionPrice">138 Грн</div>
+                        <button class="sitessSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Сторінка десертів -->
+        <div class="dessertsPage">
+            <div class="dessertsFilterConatainer">
+
+            </div>
+            <div class="dessertsSelectionContainer">
+                <div class="dessertsCard">
+                    <div class="imgDessertsConatiner">
+                        <img src="./img/imgDesserts/product-imags-rolls-2300x1533pix-07b-07.avif" alt="" class="imgDessertsCard">
+                        <p class="txtDessertsCard">Сіннамон роли</p>
+                    </div>
+                    <div class="dessertsVolumeConatiner">
+                        <button class="dessertsVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="dessertsSelectionAddCartContainer">
+                        <div class="dessertsSelectionPrice">95 Грн</div>
+                        <button class="dessertsSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="dessertsCard">
+                    <div class="imgDessertsConatiner">
+                        <img src="./img/imgDesserts/roly-z-vyshneiu.avif" alt="" class="imgDessertsCard">
+                        <p class="txtDessertsCard">Вишневі роли</p>
+                    </div>
+                    <div class="dessertsVolumeConatiner">
+                        <button class="dessertsVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="dessertsSelectionAddCartContainer">
+                        <div class="dessertsSelectionPrice">95 Грн</div>
+                        <button class="dessertsSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="dessertsCard">
+                    <div class="imgDessertsConatiner">
+                        <img src="./img/imgDesserts/chocoroll.avif" alt="" class="imgDessertsCard">
+                        <p class="txtDessertsCard">Шоколадні роли</p>
+                    </div>
+                    <div class="dessertsVolumeConatiner">
+                        <button class="dessertsVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="dessertsSelectionAddCartContainer">
+                        <div class="dessertsSelectionPrice">95 Грн</div>
+                        <button class="dessertsSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+                <div class="dessertsCard">
+                    <div class="imgDessertsConatiner">
+                        <img src="./img/imgDesserts/krem-roly.avif" alt="" class="imgDessertsCard">
+                        <p class="txtDessertsCard">Крем-сир роли</p>
+                    </div>
+                    <div class="dessertsVolumeConatiner">
+                        <button class="dessertsVolumeBtn">
+                            <p>Стандарт</p>
+                        </button>
+                    </div>
+                    <div class="dessertsSelectionAddCartContainer">
+                        <div class="dessertsSelectionPrice">95 Грн</div>
+                        <button class="dessertsSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
+                            кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Сторінка піца конструктора -->
+        <div class="pizzaConstructorPage">
+            <div class="popupContainer">
+                <div class="popup">
+                    <p>Ви додали максимальну кількість інгредієнтів</p>
+                    <div class="btnclose">Ок</div>
+                </div>
+            </div>
+            <div class="priseContainer">Сума:<span class="prise"></span>Грн</div>
+            <div class="pizzaContainer2">
+                <img src="./img/imgPizzaConstructor/basa.avif" alt="" class="basePizza">
+            </div>
+            <div class="menuContainer">
+                <h1>Твоя піца</h1>
+                <p class="boldTxt">Інгредієнти вашої піци:</p>
+                <div class="pizzaSizeContainer">
+                    <p class="txtColor">Розмір</p>
+                    <div class="sizePizzaBox">
+                        <div class="sizePizzaItem standard">
+                            <p>Стандартна</p>
+                        </div>
+                        <div class="sizePizzaItem large">
+                            <p>Велика</p>
+                        </div>
+                        <div class="sizePizzaItem extralarge">
+                            <p>Екстравелика</p>
+                        </div>
+                        <div class="sizePizzaItem thelargest">
+                            <p>Найбільша</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="doughContainer">
+                    <div class="dough">
+                        <p class="txtColor">Тісто</p>
+                        <div class="doughBox">
+                            <div class="doughItem loose">Пухке</div>
+                            <div class="doughItem thin">Тонке</div>
+                        </div>
+                    </div>
+                    <div class="pizzaBoardContainer">
+                        <p class="txtColor">Борт</p>
+                        <div class="boardBox">
+                            <div class="boardItem philadelphia">Філадельфія</div>
+                            <div class="boardItem hotDog">Hot-Dog</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterIngredientsContainer">
+                    <div class="filterItem allItem">Всі</div>
+                    <div class="filterItem saucesItems">Соуси</div>
+                    <div class="filterItem meatItems">М'ясо</div>
+                    <div class="filterItem cheeseItems">Сир</div>
+                    <div class="filterItem vegetablesItems">Овочі</div>
+                </div>
+                <div class="ingredientsContainer">
+                    <div class="saucesBox">
+                        <p class="boldTxt2">Соуси</p>
+                        <div class="saucesItemBox">
+                            <div class="saucesItem chesnochnyi">
+                                <img src="./img/imgPizzaConstructor/chesnochnyi.avif" alt="">
+                                <p>Соус Часниковий</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowchesnochnyiPlus arrowPlus"><i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientchesnochnyi">0</p>
+                                    <div class="arrowchesnochnyiMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="saucesItem alfredo">
+                                <img src="./img/imgPizzaConstructor/alfredo.avif" alt="">
+                                <p>Соус Альфредо</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowalfredoPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientalfredo">0</p>
+                                    <div class="arrowalfredoMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="saucesItem sousdomynos">
+                                <img src="./img/imgPizzaConstructor/sous-domynos.avif" alt="">
+                                <p>Соус Domino's</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowsousdomynosPlus arrowPlus"><i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientsousdomynos">0</p>
+                                    <div class="arrowsousdomynosMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="saucesItem sousbbk">
+                                <img src="./img/imgPizzaConstructor/sous-bbk.avif" alt="">
+                                <p>Соус Барбекю</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowsousbbkPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientsousbbk">0</p>
+                                    <div class="arrowsousbbkMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meatBox">
+                        <p class="boldTxt2">М'ясо</p>
+                        <div class="meatItemBox">
+                            <div class="meatItem tyrkey">
+                                <img src="./img/imgPizzaConstructor/tyrkey.avif" alt="">
+                                <p>Індичка</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowtyrkeyPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredienttyrkey">0</p>
+                                    <div class="arrowtyrkeyMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                            <div class="meatItem chorizo">
+                                <img src="./img/imgPizzaConstructor/chorizo.avif" alt="">
+                                <p>Чорізо</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowchorizoPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientchorizo">0</p>
+                                    <div class="arrowchorizoMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meatItem ohotnichikolbaski">
+                                <img src="./img/imgPizzaConstructor/ohotnichi-kolbaski-1.avif" alt="">
+                                <p>Ковбаски баварські</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowohotnichikolbaskiPlus arrowPlus"><i
+                                            class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientohotnichikolbaski">0</p>
+                                    <div class="arrowohotnichikolbaskiMinus arrowMinus"><i
+                                            class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meatItem kolbasky">
+                                <img src="./img/imgPizzaConstructor/kolbasky.avif" alt="">
+                                <p>Фрикадельки</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowkolbaskyPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientkolbasky">0</p>
+                                    <div class="arrowkolbaskyMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meatItem bifteliatyna">
+                                <img src="./img/imgPizzaConstructor/bif-teliatyna.avif" alt="">
+                                <p>Телятина</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowbifteliatynaPlus arrowPlus"><i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientbifteliatyna">0</p>
+                                    <div class="arrowbifteliatynaMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meatItem largevetchinanarez">
+                                <img src="./img/imgPizzaConstructor/large-vetchina-narez.avif" alt="">
+                                <p>Шинка</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowlargevetchinanarezPlus arrowPlus"><i
+                                            class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientlargevetchinanarez">0</p>
+                                    <div class="arrowlargevetchinanarezMinus arrowMinus"><i
+                                            class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meatItem zavantazhennia">
+                                <img src="./img/imgPizzaConstructor/zavantazhennia.avif" alt="">
+                                <p>Бекон</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowzavantazhenniaPlus arrowPlus"><i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientzavantazhennia">0</p>
+                                    <div class="arrowzavantazhenniaMinus arrowMinus"><i
+                                            class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meatItem tunets">
+                                <img src="./img/imgPizzaConstructor/tunets.avif" alt="">
+                                <p>Тунець</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowtunetsPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredienttunets">0</p>
+                                    <div class="arrowtunetsMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                            <div class="meatItem kolbaskimyunhenskie">
+                                <img src="./img/imgPizzaConstructor/45-87-img-2732-kolbaski-myunhenskie-726x340.avif"
+                                    alt="">
+                                <p>Сосиски білі</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowkolbaskimyunhenskiePlus arrowPlus"><i
+                                            class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientkolbaskimyunhenskie">0</p>
+                                    <div class="arrowkolbaskimyunhenskieMinus arrowMinus"><i
+                                            class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meatItem pepp">
+                                <img src="./img/imgPizzaConstructor/pepp-302x302.avif" alt="">
+                                <p>Пепероні</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowpeppPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientpepp">0</p>
+                                    <div class="arrowpeppMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                            <div class="meatItem tirasdepollo">
+                                <img src="./img/imgPizzaConstructor/tiras-de-pollo.avif" alt="">
+                                <p>Курка</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowtirasdepolloPlus arrowPlus"><i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredienttirasdepollo">0</p>
+                                    <div class="arrowtirasdepolloMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cheeseBox">
+                        <p class="boldTxt2">Сир</p>
+                        <div class="cheeseItemBox">
+                            <div class="cheeseItem chedder">
+                                <img src="./img/imgPizzaConstructor/syr-chedder.avif" alt="">
+                                <p>Чеддер</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowchedderPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientchedder">0</p>
+                                    <div class="arrowchedderMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cheeseItem mozzarella">
+                                <img src="./img/imgPizzaConstructor/mozzarella.avif" alt="">
+                                <p>Моцарела</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowmozzarellaPlus arrowPlus"><i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientmozzarella">0</p>
+                                    <div class="arrowmozzarellaMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cheeseItem dorblu">
+                                <img src="./img/imgPizzaConstructor/82857739-2222299-dor-blu4.avif" alt="">
+                                <p>Бергадер Блю</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowdorbluPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientdorblu">0</p>
+                                    <div class="arrowdorbluMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                            <div class="cheeseItem parmezan">
+                                <img src="./img/imgPizzaConstructor/parmezan.avif" alt="">
+                                <p>Пармезан</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowparmezanPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientparmezan">0</p>
+                                    <div class="arrowparmezanMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cheeseItem feta">
+                                <img src="./img/imgPizzaConstructor/feta.avif" alt="">
+                                <p>Фета</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowfetaPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientfeta">0</p>
+                                    <div class="arrowfetaMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vegetablesBox">
+                        <p class="boldTxt2">Овочі</p>
+                        <div class="vegetablesItemBox">
+                            <div class="vegetablesItem cherrytomatoes">
+                                <img src="./img/imgPizzaConstructor/cherry-tomatoes.avif" alt="">
+                                <p>Помідори чері</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowcherrytomatoesPlus arrowPlus"><i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientcherrytomatoes">0</p>
+                                    <div class="arrowcherrytomatoesMinus arrowMinus"><i
+                                            class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem shpinat">
+                                <img src="./img/imgPizzaConstructor/shpinat350.avif" alt="">
+                                <p>Шпинат</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowshpinatPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientshpinat">0</p>
+                                    <div class="arrowshpinatMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem khalapeno"><img
+                                    src="./img/imgPizzaConstructor/khalapeno.avif" alt="">
+                                <p>Халапеньйо</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowkhalapenoPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientkhalapeno">0</p>
+                                    <div class="arrowkhalapenoMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem tomato">
+                                <img src="./img/imgPizzaConstructor/tomato-png12549.avif" alt="">
+                                <p>Помідори</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowtomatoPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredienttomato">0</p>
+                                    <div class="arrowtomatoMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem horchytsa">
+                                <img src="./img/imgPizzaConstructor/horchytsa.avif" alt="">
+                                <p>Гірчиця</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowhorchytsaPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredienthorchytsa">0</p>
+                                    <div class="arrowhorchytsaMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem olyvky">
+                                <img src="./img/imgPizzaConstructor/olyvky.avif" alt="">
+                                <p>Оливки</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowolyvkyPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientolyvky">0</p>
+                                    <div class="arrowolyvkyMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem pear">
+                                <img src="./img/imgPizzaConstructor/pear.avif" alt="">
+                                <p>Груша</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowpearPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientpear">0</p>
+                                    <div class="arrowpearMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem marinovannyeogurcy">
+                                <img src="./img/imgPizzaConstructor/marinovannye-ogurcy.avif" alt="">
+                                <p>Огірки мариновані</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowmarinovannyeogurcyPlus arrowPlus"><i
+                                            class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientmarinovannyeogurcy">0</p>
+                                    <div class="arrowmarinovannyeogurcyMinus arrowMinus"><i
+                                            class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem perets">
+                                <img src="./img/imgPizzaConstructor/perets.avif" alt="">
+                                <p>Болгарський перець</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowperetsPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientperets">0</p>
+                                    <div class="arrowperetsMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem ananasa">
+                                <img src="./img/imgPizzaConstructor/polza-i-vred-ananasa-7.avif" alt="">
+                                <p>Ананас</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowananasaPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientananasa">0</p>
+                                    <div class="arrowananasaMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem shampinony">
+                                <img src="./img/imgPizzaConstructor/shampinony.avif" alt="">
+                                <p>Гриби</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowshampinonyPlus arrowPlus"><i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <p class="amountIngredientshampinony">0</p>
+                                    <div class="arrowshampinonyMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem luk">
+                                <img src="./img/imgPizzaConstructor/luk.avif" alt="">
+                                <p>Цибуля</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowlukPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientluk">0</p>
+                                    <div class="arrowlukMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem kukurudzu">
+                                <img src="./img/imgPizzaConstructor/yak-pravilno-zvariti-kukurudzu-v-kachanah-shvidko-smachno-prigotuvannya-z-vdeo-894.avif"
+                                    alt="">
+                                <p>Кукурудза</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowkukurudzuPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientkukurudzu">0</p>
+                                    <div class="arrowkukurudzuMinus arrowMinus"><i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vegetablesItem crispy">
+                                <img src="./img/imgPizzaConstructor/crispy.avif" alt="">
+                                <p>Кріспі цибулька</p>
+                                <div class="amountIngredientBox">
+                                    <div class="arrowcrispyPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                    <p class="amountIngredientcrispy">0</p>
+                                    <div class="arrowcrispyMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appsBox">
+                        <p class="boldTxt2">Додатки</p>
+                        <div class="appsItem sousbbktop">
+                            <img src="./img/imgPizzaConstructor/sous-bbk.avif" alt="">
+                            <p>Соус Барбекю (зверху)</p>
+                            <div class="amountIngredientBox">
+                                <div class="arrowsousbbktopPlus arrowPlus"><i class="fa-solid fa-plus"></i></div>
+                                <p class="amountIngredientsousbbktop">0</p>
+                                <div class="arrowsousbbktopMinus arrowMinus"><i class="fa-solid fa-minus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnContainer">
+                    <button class="resetBtn">Очистити</button>
+                    <button class="payBtn">Сплатити</button>
+                </div>
+            </div>
+        </div>
+        <script src="./main.js"></script>
+</body>
+
+</html>

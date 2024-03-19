@@ -1,0 +1,1233 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+.wrap {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Логотип */
+.logo {
+    width: 150px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgLogo {
+    width: 100%;
+}
+
+/* Навігація */
+.controlsContainer {
+    width: 700px;
+    height: 10vh;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.controlsItem {
+    width: 60px;
+    font-weight: 500;
+    margin: 0 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.desserts {
+    width: 80px;
+}
+
+.pizzaConstructor {
+    width: 175px;
+}
+
+.controlsItem:hover {
+    font-size: 17.5px;
+}
+
+.openPage {
+    color: rgb(254, 0, 33);
+}
+
+/* Замовлення */
+.orderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 32px;
+    height: 47px;
+    border: 2px solid rgb(186, 186, 186);
+}
+
+/* Корзина */
+.basketContainer {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4f4f4f;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+/* Кнопка замовлень */
+.btnPlaceOrder {
+    padding: 11px 42px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(254, 0, 33);
+    color: #fff;
+}
+
+.btnPlaceOrder:hover {
+    background-color: rgb(190, 23, 27);
+}
+
+.txtPlaceOreder {
+    font-size: 15px;
+    line-height: 21px;
+}
+
+/* Замовлення */
+.priceOrder {
+    width: 80px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.txtPriceOrder {
+    font-size: 16px;
+}
+
+/* Сторінка акцій  */
+.sharesPage {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 200px;
+}
+
+/* тарілука з піцами */
+.plate {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 50%;
+    position: relative;
+    right: 200px;
+    transition: 1s;
+    border: 5px solid rgb(217, 217, 217);
+}
+
+.topPlateContainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerPlateContainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottomPlateContainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pizzaItemTop {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 50px;
+}
+
+.pizzaItemLeft {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    right: 50px;
+}
+
+.pizzaItemRignt {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    left: 50px;
+}
+
+.pizzaItemBottom {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 50px;
+}
+
+.sharesImg {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* Інформація про акційну піцу */
+.actionItemContainer {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    /* background-color: #4f4f4f; */
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px 10px 20px;
+    border: 1px solid rgb(217, 217, 217);
+    font-size: 18px;
+}
+
+.infoActionItemContainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 30px;
+}
+
+/* Кнопки контролю */
+.pizzaControlBtnContainer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pizzaControlBtn {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: rgb(254, 0, 33);
+    color: #fff;
+}
+
+/* Сторінка піци */
+.pizzaContainerPage {
+    width: 100%;
+    min-height: 90vh;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pizzaContainerSorting {
+    width: 100%;
+    min-height: 10vh;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+}
+
+.pizzaSelection {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.pizzaCard {
+    width: 320px;
+    height: 550px;
+    border-radius: 10px;
+    border: 1px solid rgb(217, 217, 217);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.pizzaCardImg {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+}
+
+.pizzaCardName {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pizzaCardInfo {
+    padding: 0 5px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.pizzaSelectionSizeContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pizzaSelectionSizeTop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.pizzaSelectionSizeBtn {
+    width: 32%;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    border: 1px solid rgb(217, 217, 217);
+    background-color: #fff;
+    font-weight: 500;
+}
+
+.pizzaSelectionSizeBottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+.pizzaSelectionSizeBtnThelargestsweetpizza,
+.pizzaSelectionSizeBtnThelargestbeefandcrispy,
+.pizzaSelectionSizeBtnThelargestpearandbluecheese,
+.pizzaSelectionSizeBtnThelargestjb {
+    width: 100%;
+}
+
+.pizzaSelectionBoardContainer,
+.pizzaSelectionDoughContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.pizzaSelectionBoardBtn {
+    width: 86%;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    border: 1px solid rgb(217, 217, 217);
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.pizzaSelectionAddCartContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.pizzaSelectionPrice {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.pizzaSelectionAddCartBtn {
+    width: 60%;
+    height: 40px;
+    background-color: rgb(254, 0, 33);
+    border-radius: 40px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.pizzaSelectionAddCartBtn:hover {
+    background-color: rgb(190, 23, 27);
+}
+
+.pizzaSelectionBoardBtnbeefandcrispy,
+.pizzaSelectionDoughBtnbeefandcrispy,
+.pizzaSelectionDoughBtnpearandbluecheese,
+.pizzaSelectionBoardBtnpearandbluecheese,
+.pizzaSelectionDoughBtnjb,
+.pizzaSelectionBoardBtnjb {
+    width: 43%;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    border: 1px solid rgb(217, 217, 217);
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Сторінка напоїв */
+.drinksPage {
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drinksFilterContainer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.drinksSelection {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.drinksCard {
+    width: 320px;
+    height: 500px;
+    border-radius: 10px;
+    border: 1px solid rgb(217, 217, 217);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.drincsImgContainer {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgCardDrinks {
+    height: 80%;
+    border-radius: 10px 10px 0 0;
+}
+
+.txtDrinksCard {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.drinkVolumeConatiner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drinkVolumeConatiners {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.drinkVolumeBtn {
+    width: 95%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b3b3b;
+    color: #fff;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.drinkVolumeBtns {
+    width: 32%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(217, 217, 217); 
+    background-color: #fff;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.drinksSelectionAddCartContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.drinksSelectionPrice {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.drinksSelectionAddCartBtn {
+    width: 60%;
+    height: 40px;
+    background-color: rgb(254, 0, 33);
+    border-radius: 40px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.drinksSelectionAddCartBtn:hover {
+    background-color: rgb(190, 23, 27);
+}
+
+/* Сторінка сайдів */
+.sitesPage  {
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sitesFilterContainer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.sitesSelectionContainer {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.sitesCard {
+    width: 320px;
+    height: 500px;
+    border-radius: 10px;
+    border: 1px solid rgb(217, 217, 217);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.sitesCardImgConatiner {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sitesCardImg {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.txtSitesCard {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.sitesVolumeConatiner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drinkVolumeConatiners {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.sitesVolumeBtn {
+    width: 95%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b3b3b;
+    color: #fff;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.drinkVolumeBtns {
+    width: 32%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(217, 217, 217); 
+    background-color: #fff;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.sitessSelectionAddCartContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.sitessSelectionPrice {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.sitessSelectionAddCartBtn {
+    width: 60%;
+    height: 40px;
+    background-color: rgb(254, 0, 33);
+    border-radius: 40px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.sitessSelectionAddCartBtn:hover {
+    background-color: rgb(190, 23, 27);
+}
+
+/* Сторінка десертів */
+.dessertsPage {
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dessertsFilterConatainer {
+    width: 100%;
+    height: 10vh;
+    display: none;
+    align-items: center;
+}
+
+.dessertsSelectionContainer {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.dessertsCard {
+    width: 320px;
+    height: 500px;
+    border-radius: 10px;
+    border: 1px solid rgb(217, 217, 217);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.imgDessertsConatiner {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgDessertsCard {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.txtDessertsCard {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.dessertsVolumeConatiner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drinkVolumeConatiners {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.dessertsVolumeBtn {
+    width: 95%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b3b3b;
+    color: #fff;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.drinkVolumeBtns {
+    width: 32%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(217, 217, 217); 
+    background-color: #fff;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.dessertsSelectionAddCartContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.dessertsSelectionPrice {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.dessertsSelectionAddCartBtn {
+    width: 60%;
+    height: 40px;
+    background-color: rgb(254, 0, 33);
+    border-radius: 40px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.dessertsSelectionAddCartBtn:hover {
+    background-color: rgb(190, 23, 27);
+}
+
+/* Сторінка піца конструктора  */
+.pizzaConstructorPage {
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    padding-bottom: 50px;
+}
+
+.popupContainer {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 11px 31px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.btnclose {
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fe0021;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.pizzaContainer2 {
+    width: 50%;
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.menuContainer {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.boldTxt {
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.boldTxt2 {
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.pizzaSizeContainer {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sizePizzaBox {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sizePizzaItem {
+    width: 150px;
+    height: 40px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.chosenSizePizzaItem {
+    color: #fff;
+    background-color: #333;
+}
+
+.chosenFilterItem {
+    color: rgb(254, 0, 33);
+}
+
+.doughContainer {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dough {
+    width: 49%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.doughBox {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pizzaBoardContainer {
+    width: 49%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.boardBox {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doughItem,
+.boardItem {
+    width: 150px;
+    height: 40px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.txtColor {
+    color: #888;
+}
+
+.filterIngredientsContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.filterItem {
+    max-width: 200px;
+    padding: 20px 10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 11px 31px;
+    border-radius: 12px;
+    min-width: 143px;
+    margin-bottom: 9px;
+    margin-right: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ingredientsContainer {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.saucesBox,
+.meatBox,
+.cheeseBox,
+.vegetablesBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.saucesItemBox,
+.meatItemBox,
+.cheeseItemBox,
+.vegetablesItemBox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.saucesItem,
+.meatItem,
+.cheeseItem,
+.vegetablesItem,
+.appsItem {
+    width: 180px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 10px 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    padding: 22px 13px 13px;
+}
+
+.amountIngredientBox {
+    width: 80px;
+    height: 30px;
+    background-color: #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 3px 7px;
+    border-radius: 12px;
+    margin: 5px 5px 5px 0;
+}
+
+.arrowPlus,
+.arrowMinus {
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.appsBox {
+    width: 100%;
+}
+
+.priseContainer {
+    width: 150px;
+    height: 50px;
+    background-color: #3b3b3b;
+    position: fixed;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.prise {
+    margin-left: 10px;
+    margin-right: 2px;
+}
+
+.btnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payBtn {
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: #fe0021;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.payBtn:hover {
+    background-color: #be171b;
+}
+
+.resetBtn {
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1200px) {
+    .pizzaContainer2 {
+        width: 40%;
+    }
+
+    .basePizza {
+        width: 130%;
+    }
+
+    .menuContainer {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrap {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .pizzaContainer2 {
+        width: 100%;
+    }
+
+    .basePizza {
+        width: 90%;
+    }
+
+    .menuContainer {
+        width: 100%;
+        padding: 0 80px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .menuContainer {
+        padding: 0 20px;
+    }
+
+    .pizzaContainer2 {
+        height: 80vh;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .menuContainer {
+        padding: 0 20px;
+    }
+
+    .pizzaContainer2 {
+        height: 60vh;
+    }
+
+    .sizePizzaBox {
+        flex-wrap: wrap;
+    }
+
+    .sizePizzaItem {
+        margin-bottom: 10px;
+    }
+
+    .pizzaSizeContainer {
+        height: 120px;
+        justify-content: flex-start;
+    }
+
+    .doughBox,
+    .boardBox {
+        flex-direction: column;
+        height: 80px;
+        align-items: flex-start;
+    }
+
+    .boardBox {
+        align-items: flex-end;
+    }
+
+    .pizzaBoardContainer {
+        height: 100px;
+        align-items: flex-end;
+    }
+
+    .dough {
+        height: 100px;
+    }
+
+    .doughContainer {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .pizzaContainer2 {
+        height: 40vh;
+    }
+
+    .priseContainer {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+}
