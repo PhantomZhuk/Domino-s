@@ -499,7 +499,7 @@ header {
 }
 
 .drinksCard {
-    width: 320px;
+    width: 315px;
     height: 500px;
     border-radius: 10px;
     border: 1px solid rgb(217, 217, 217);
@@ -627,7 +627,7 @@ header {
 }
 
 .sitesCard {
-    width: 320px;
+    width: 315px;
     height: 500px;
     border-radius: 10px;
     border: 1px solid rgb(217, 217, 217);
@@ -755,7 +755,7 @@ header {
 }
 
 .dessertsCard {
-    width: 320px;
+    width: 315px;
     height: 500px;
     border-radius: 10px;
     border: 1px solid rgb(217, 217, 217);
