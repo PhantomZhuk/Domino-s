@@ -23,6 +23,47 @@ header {
     padding: 20px;
 }
 
+.navbarContainer {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    background-color: #333;
+    top: 10vh;
+    left: -100%;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 70px 0 70px 30px;
+    transition: 0.2s;
+}
+
+.controlsnavbarContainer {
+    list-style: none;
+}
+
+.controlsItemnavbar {
+    cursor: pointer;
+    width: 100%;
+    height: 80px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.headerLeftContainer {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBarBtn {
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
 /* Логотип */
 .logo {
     width: 150px;
@@ -34,6 +75,11 @@ header {
 
 .imgLogo {
     width: 100%;
+    display: flex;
+}
+
+.svgLogo {
+    display: none;
 }
 
 /* Навігація */
@@ -132,7 +178,7 @@ header {
 /* Сторінка акцій  */
 .sharesPage {
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,14 +187,14 @@ header {
 
 /* тарілука з піцами */
 .plate {
-    width: 400px;
+    min-width: 400px;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 50%;
     position: relative;
-    right: 200px;
+    left: -200px;
     transition: 1s;
     border: 5px solid rgb(217, 217, 217);
 }
@@ -219,7 +265,6 @@ header {
     width: 400px;
     height: 400px;
     border-radius: 10px;
-    /* background-color: #4f4f4f; */
     color: #222;
     display: flex;
     flex-direction: column;
@@ -228,6 +273,7 @@ header {
     padding: 50px 20px 10px 20px;
     border: 1px solid rgb(217, 217, 217);
     font-size: 18px;
+    position: relative;
 }
 
 .infoActionItemContainer {
@@ -283,12 +329,11 @@ header {
     min-height: 80vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px;
+    justify-content: center;
 }
 
 .pizzaCard {
-    width: 320px;
+    width: 315px;
     height: 550px;
     border-radius: 10px;
     border: 1px solid rgb(217, 217, 217);
@@ -298,6 +343,7 @@ header {
     align-items: center;
     padding-bottom: 10px;
     margin-bottom: 10px;
+    margin: 10px;
 }
 
 .pizzaCardImg {
@@ -448,9 +494,8 @@ header {
     min-height: 80vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
 }
 
 .drinksCard {
@@ -463,7 +508,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .drincsImgContainer {
@@ -520,7 +565,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(217, 217, 217); 
+    border: 1px solid rgb(217, 217, 217);
     background-color: #fff;
     border-radius: 40px;
     cursor: pointer;
@@ -556,7 +601,7 @@ header {
 }
 
 /* Сторінка сайдів */
-.sitesPage  {
+.sitesPage {
     width: 100%;
     min-height: 100vh;
     display: none;
@@ -577,9 +622,8 @@ header {
     min-height: 80vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
 }
 
 .sitesCard {
@@ -592,7 +636,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .sitesCardImgConatiner {
@@ -649,7 +693,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(217, 217, 217); 
+    border: 1px solid rgb(217, 217, 217);
     background-color: #fff;
     border-radius: 40px;
     cursor: pointer;
@@ -706,9 +750,8 @@ header {
     min-height: 80vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
 }
 
 .dessertsCard {
@@ -721,7 +764,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .imgDessertsConatiner {
@@ -778,7 +821,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(217, 217, 217); 
+    border: 1px solid rgb(217, 217, 217);
     background-color: #fff;
     border-radius: 40px;
     cursor: pointer;
@@ -828,6 +871,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 30vh;
 }
 
 .popup {
@@ -1033,7 +1077,7 @@ h1 {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -1043,7 +1087,7 @@ h1 {
 .vegetablesItem,
 .appsItem {
     width: 180px;
-    min-height: 200px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1142,25 +1186,65 @@ h1 {
     .menuContainer {
         width: 60%;
     }
+
+    .controlsContainer {
+        width: 600px;
+    }
 }
 
-@media screen and (max-width: 900px) {
-    .wrap {
+@media screen and (max-width: 1000px) {
+    .navBarBtn {
+        display: flex;
+    }
+
+    .controlsContainer {
+        display: none;
+    }
+
+    .pizzaConstructorPage {
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
+    }
+
+    .priseContainer {
+        left: 10px;
+        margin: 0;
     }
 
     .pizzaContainer2 {
         width: 100%;
-    }
-
-    .basePizza {
-        width: 90%;
+        height: 120vh;
     }
 
     .menuContainer {
         width: 100%;
         padding: 0 80px;
+    }
+
+    .sizePizzaItem {
+        width: 24%;
+    }
+
+    .doughItem,
+    .boardItem {
+        width: 49%;
+    }
+
+    .basePizza {
+        width: 70%;
+    }
+
+    .controlsItemnavbar {
+        width: 200px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .actionItemContainer {
+        right: 100px;
     }
 }
 
@@ -1169,8 +1253,19 @@ h1 {
         padding: 0 20px;
     }
 
-    .pizzaContainer2 {
-        height: 80vh;
+    .sharesPage {
+        flex-direction: column;
+        padding: 50px 50px 50px 0;
+    }
+
+    .actionItemContainer {
+        right: 0;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    .plate {
+        left: -300px;
     }
 }
 
@@ -1189,6 +1284,8 @@ h1 {
 
     .sizePizzaItem {
         margin-bottom: 10px;
+        width: 150px;
+        height: 40px;
     }
 
     .pizzaSizeContainer {
@@ -1198,9 +1295,11 @@ h1 {
 
     .doughBox,
     .boardBox {
+        width: 100%;
         flex-direction: column;
-        height: 80px;
+        height: 100px;
         align-items: flex-start;
+
     }
 
     .boardBox {
@@ -1208,16 +1307,23 @@ h1 {
     }
 
     .pizzaBoardContainer {
-        height: 100px;
+        height: 120px;
         align-items: flex-end;
     }
 
     .dough {
-        height: 100px;
+        height: 120px;
     }
 
     .doughContainer {
         height: 100px;
+    }
+
+    .doughItem,
+    .boardItem {
+        width: 150px;
+        height: 40px;
+        margin: 5px 0;
     }
 }
 
@@ -1229,5 +1335,35 @@ h1 {
     .priseContainer {
         margin-top: 20px;
         margin-left: 20px;
+    }
+
+    .basketContainer {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .orderContainer {
+        height: 41px;
+    }
+
+    .btnPlaceOrder {
+        padding: 8px 30px;
+    }
+
+    .imgLogo {
+        display: none;
+    }
+
+    .svgLogo {
+        display: flex;
+    }
+
+    .actionItemContainer {
+        width: 300px;
+    }
+
+    .pizzaControlBtn {
+        padding: 10px 30px;
     }
 }

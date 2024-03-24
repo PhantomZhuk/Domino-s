@@ -1,4 +1,16 @@
 // Header
+let navbarContainerOpen = false;
+$(`.navBarBtn`).click(function(){
+    if (navbarContainerOpen == false){
+    $(`.navbarContainer`).animate({left: '0'},{width: `100%`});
+        navbarContainerOpen = true
+    }else if (navbarContainerOpen == true){
+        $(`.navbarContainer`).animate({left: '-100%'});
+        navbarContainerOpen = false
+    }
+
+})
+
 $(`.shares`).addClass(`openPage`);
 
 $(`.shares`).click(function () {
