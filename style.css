@@ -14,6 +14,163 @@
     align-items: center;
 }
 
+.SelectedOrderContainer {
+    position: absolute;
+    width: 350px;
+    max-height: 500px;
+    top: 10vh;
+    right: 50px;
+    background-color: red;
+    z-index: 2;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 4px 31px;
+    padding: 15px;
+}
+
+.SelectedOrderContainerFalse {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.SelectedOrderContainerTrue {
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.SelectedPizzaContainer {
+    width: 100%;
+    max-height: 370px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-top: 5px;
+}
+
+.cardSelectedPizza {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.cardSelectedPizzaImgContainer {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.cardSelectedPizzaImg {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cardSelectedPizzaInfoContainer {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardSelectedPizzaTxtName {
+    width: 100%;
+    height: 49%;
+    margin-bottom: 30px;
+}
+
+.priceCardSelectedPizzaContainer {
+    width: 100%;
+    height: 49%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nuberPizzaConatiner {
+    width: 90px;
+    height: 30px;
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+.controlSelectedOrderContainer {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.PriceConatiner {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceTxt {
+    font-size: 18px;
+}
+
+.price {
+    font-size: 18px;
+    color: #fe0021;
+    font-weight: 600;
+}
+
+.controlSelectedOrderBtnContainer {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controlSelectedOrderBtn {
+    padding: 13px 36px;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+}
+
+.orderBtn {
+    background-color: #fe0021;
+    color: #fff;
+}
+
+.orderBtn:hover {
+    background-color: #be171b;
+}
+
+.cleanBtn {
+    background-color: #d3d3d3;
+    color: #000;
+}
+
 header {
     width: 100%;
     height: 10vh;
@@ -487,6 +644,19 @@ header {
     height: 10vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.filterDrinksItem {
+    width: 150px;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 11px 31px;
+    border-radius: 10px;
+    margin: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .drinksSelection {
@@ -603,7 +773,7 @@ header {
 /* Сторінка сайдів */
 .sitesPage {
     width: 100%;
-    min-height: 100vh;
+    min-height: 50vh;
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -612,9 +782,23 @@ header {
 
 .sitesFilterContainer {
     width: 100%;
-    height: 10vh;
+    min-height: 10vh;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sitesFilterItem {
+    width: 150px;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 11px 31px;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .sitesSelectionContainer {
@@ -628,7 +812,7 @@ header {
 
 .sitesCard {
     width: 315px;
-    height: 500px;
+    height: 450px;
     border-radius: 10px;
     border: 1px solid rgb(217, 217, 217);
     display: flex;
@@ -654,6 +838,8 @@ header {
 }
 
 .txtSitesCard {
+    width: 100%;
+    height: 100px;
     font-size: 24px;
     font-weight: 600;
     text-align: center;
@@ -740,14 +926,27 @@ header {
 
 .dessertsFilterConatainer {
     width: 100%;
-    height: 10vh;
-    display: none;
+    max-height: 10vh;
+    display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.dessertsFilterItem {
+    width: 150px;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 11px 31px;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .dessertsSelectionContainer {
     width: 100%;
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

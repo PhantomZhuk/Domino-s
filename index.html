@@ -66,6 +66,77 @@
                 </ul>
             </nav>
             <div class="orderContainer">
+                <div class="SelectedOrderContainer">
+                    <div class="SelectedOrderContainerFalse">
+                        <p>Ваш кошик порожній</p>
+                    </div>
+                    <div class="SelectedOrderContainerTrue">
+                        <div class="SelectedPizzaContainer">
+                            <!-- <div class="cardSelectedPizza">
+                                <div class="cardSelectedPizzaImgContainer">
+                                    <img src="./img/imgPizza/beefandcrispy-pieces.avif" alt="" class="cardSelectedPizzaImg">
+                                </div>
+                                <div class="cardSelectedPizzaInfoContainer">
+                                    <p class="cardSelectedPizzaTxtName">Піца з грушею</p>
+                                    <div class="priceCardSelectedPizzaContainer">
+                                        <div class="nuberPizzaConatiner">
+                                            <i class="fa-solid fa-plus cursorPointer"></i>
+                                            <p class="numberPizza">1</p>
+                                            <i class="fa-solid fa-minus cursorPointer"></i>
+                                        </div>
+                                        <p class="priceCardSelectedPizza">300 Грн</p>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="cardSelectedPizza cardSelectedPizzaPaperoni">
+                                <div class="cardSelectedPizzaImgContainer">
+                                    <img src="./img/imgPizza/beefandcrispy-pieces.avif" alt=""
+                                        class="cardSelectedPizzaImg">
+                                </div>
+                                <div class="cardSelectedPizzaInfoContainer">
+                                    <p class="cardSelectedPizzaTxtName cardSelectedPizzaTxtNamePaperoni"></p>
+                                    <div class="priceCardSelectedPizzaContainer">
+                                        <div class="nuberPizzaConatiner">
+                                            <i
+                                                class="fa-solid fa-plus cursorPointer arrowPluscardSelectedPizzaPaperoni"></i>
+                                            <p class="numberPizza numberPizzaPaperoni">1</p>
+                                            <i
+                                                class="fa-solid fa-minus cursorPointer arrowMinuscardSelectedPizzaPaperoni"></i>
+                                        </div>
+                                        <p class="priceCardSelectedPizza priceCardSelectedPizzaPaperoni"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cardSelectedPizza cardSelectedPizzaBarbeku">
+                                <div class="cardSelectedPizzaImgContainer">
+                                    <img src="./img/imgPizza/beefandcrispy-pieces.avif" alt="" class="cardSelectedPizzaImg">
+                                </div>
+                                <div class="cardSelectedPizzaInfoContainer">
+                                    <p class="cardSelectedPizzaTxtName cardSelectedPizzaTxtNameBarbeku"></p>
+                                    <div class="priceCardSelectedPizzaContainer">
+                                        <div class="nuberPizzaConatiner">
+                                            <i class="fa-solid fa-plus cursorPointer arrowPluscardSelectedPizzaBarbeku"></i>
+                                            <p class="numberPizza numberPizzaBarbeku">1</p>
+                                            <i class="fa-solid fa-minus cursorPointer arrowMinuscardSelectedPizzaBarbeku"></i>
+                                        </div>
+                                        <p class="priceCardSelectedPizza priceCardSelectedPizzaBarbeku"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="controlSelectedOrderContainer">
+                            <div class="PriceConatiner">
+                                <p class="priceTxt">Сума:</p>
+                                <p class="price"></p>
+                            </div>
+                            <div class="controlSelectedOrderBtnContainer">
+                                <button class="controlSelectedOrderBtn orderBtn">Замовити</button>
+                                <button class="controlSelectedOrderBtn cleanBtn">Очистити</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Корзина -->
                 <div class="basketContainer">
                     <p class="txtNmberOrders">00</p>
@@ -268,10 +339,13 @@
         <!-- Сторінка напоїв -->
         <div class="drinksPage">
             <div class="drinksFilterContainer">
-
+                <div class="filterDrinksItem filterDrinksItemAll">Всі</div>
+                <div class="filterDrinksItem filterDrinksItemTea">Чай</div>
+                <div class="filterDrinksItem filterDrinksItemCoffee">Кава</div>
+                <div class="filterDrinksItem filterDrinksItemWater">Вода</div>
             </div>
             <div class="drinksSelection">
-                <div class="drinksCard">
+                <div class="drinksCard Tea">
                     <div class="drincsImgContainer">
                         <img src="./img/imgDrinks/imbyr.avif" alt="" class="imgCardDrinks">
                         <p class="txtDrinksCard">Чай імбир лемонграс</p>
@@ -287,7 +361,7 @@
                             кошик</button>
                     </div>
                 </div>
-                <div class="drinksCard">
+                <div class="drinksCard Tea">
                     <div class="drincsImgContainer">
                         <img src="./img/imgDrinks/smorodyna.avif" alt="" class="imgCardDrinks">
                         <p class="txtDrinksCard">Чай смородина базилік</p>
@@ -303,7 +377,7 @@
                             кошик</button>
                     </div>
                 </div>
-                <div class="drinksCard">
+                <div class="drinksCard Tea">
                     <div class="drincsImgContainer">
                         <img src="./img/imgDrinks/malyna.avif" alt="" class="imgCardDrinks">
                         <p class="txtDrinksCard">Чай малина м'ята</p>
@@ -319,7 +393,7 @@
                             кошик</button>
                     </div>
                 </div>
-                <div class="drinksCard">
+                <div class="drinksCard Coffee">
                     <div class="drincsImgContainer">
                         <img src="./img/imgDrinks/icepresso-latte.avif" alt="" class="imgCardDrinks">
                         <p class="txtDrinksCard">Холодний кавовий напій АйсПрессо Латте</p>
@@ -335,7 +409,7 @@
                             кошик</button>
                     </div>
                 </div>
-                <div class="drinksCard">
+                <div class="drinksCard Coffee">
                     <div class="drincsImgContainer">
                         <img src="./img/imgDrinks/icepresso.avif" alt="" class="imgCardDrinks">
                         <p class="txtDrinksCard">Холодний кавовий напій АйсПрессо Класік</p>
@@ -351,7 +425,7 @@
                             кошик</button>
                     </div>
                 </div>
-                <div class="drinksCard">
+                <div class="drinksCard Water">
                     <div class="drincsImgContainer">
                         <img src="./img/imgDrinks/09-bonaquabig.avif" alt="" class="imgCardDrinks">
                         <p class="txtDrinksCard">BonAqua газована 0,5</p>
@@ -367,7 +441,7 @@
                             кошик</button>
                     </div>
                 </div>
-                <div class="drinksCard">
+                <div class="drinksCard Water">
                     <div class="drincsImgContainer">
                         <img src="./img/imgDrinks/ng-min.avif" alt="" class="imgCardDrinks">
                         <p class="txtDrinksCard">BonAqua газована 0,5</p>
@@ -383,7 +457,7 @@
                             кошик</button>
                     </div>
                 </div>
-                <div class="drinksCard">
+                <div class="drinksCard Water">
                     <div class="drincsImgContainer">
                         <img src="./img/imgDrinks/cc-min.avif" alt="" class="imgCardDrinks">
                         <p class="txtDrinksCard">Coca-Cola</p>
@@ -404,8 +478,8 @@
                         <button class="drinksSelectionAddCartBtn"><i class="fa-solid fa-cart-arrow-down"></i> В
                             кошик</button>
                     </div>
-                </div>
-                <div class="drinksCard">
+                </div> 
+                <div class="drinksCard Water">
                     <div class="drincsImgContainer">
                         <img src="./img/imgDrinks/cczero-min.avif" alt="" class="imgCardDrinks">
                         <p class="txtDrinksCard">Coca-Cola Zero</p>
@@ -432,7 +506,12 @@
         <!-- Сторінка сайдів -->
         <div class="sitesPage">
             <div class="sitesFilterContainer">
-
+                <div class="sitesFilterItem sitesFilterItemAll">Всі</div>
+                <div class="sitesFilterItem sitesFilterItemMinirolls">Мініроли</div>
+                <div class="sitesFilterItem sitesFilterItemBreads">Хлібці</div>
+                <div class="sitesFilterItem sitesFilterItemChicken">Курка</div>
+                <div class="sitesFilterItem sitesFilterItemPotatoes">Картопля</div>
+                <div class="sitesFilterItem sitesFilterItemSalads">Салати</div>
             </div>
             <div class="sitesSelectionContainer">
                 <div class="sitesCard">
@@ -507,7 +586,9 @@
         <!-- Сторінка десертів -->
         <div class="dessertsPage">
             <div class="dessertsFilterConatainer">
-
+                <div class="dessertsFilterItem dessertsFilterItemAll">Всі</div>
+                <div class="dessertsFilterItem dessertsFilterItemDesserts">Десерти</div>
+                <div class="dessertsFilterItem dessertsFilterItemIceCream">Морозиво</div>
             </div>
             <div class="dessertsSelectionContainer">
                 <div class="dessertsCard">

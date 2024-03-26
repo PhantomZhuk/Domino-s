@@ -1,11 +1,11 @@
 // Header
 let navbarContainerOpen = false;
-$(`.navBarBtn`).click(function(){
-    if (navbarContainerOpen == false){
-    $(`.navbarContainer`).animate({left: '0'},{width: `100%`});
+$(`.navBarBtn`).click(function () {
+    if (navbarContainerOpen == false) {
+        $(`.navbarContainer`).animate({ left: '0' });
         navbarContainerOpen = true
-    }else if (navbarContainerOpen == true){
-        $(`.navbarContainer`).animate({left: '-100%'});
+    } else if (navbarContainerOpen == true) {
+        $(`.navbarContainer`).animate({ left: '-100%' });
         navbarContainerOpen = false
     }
 
@@ -102,6 +102,22 @@ $(`.pizzaConstructor`).click(function () {
     $(`.dessertsPage`).css(`display`, `none`);
     $(`.pizzaConstructorPage`).css(`display`, `flex`);
 })
+$(`.SelectedOrderContainer`).hide()
+
+// let numberPizzaBasket = 0;
+// $(`.basketContainer`).click(function () {
+//     $(`.SelectedOrderContainer`).toggle();
+//     if (numberPizzaBasket == 0) {
+//         $(`.SelectedOrderContainerFalse`).css(`display`, `flex`)
+//         $(`.SelectedOrderContainerTrue`).css(`display`, `none`)
+//         // haveOrderCart = true
+//     } else if (numberPizzaBasket >= 1) {
+//         $(`.SelectedOrderContainerFalse`).css(`display`, `none`)
+//         $(`.SelectedOrderContainerTrue`).css(`display`, `flex`)
+//         // haveOrderCart = false
+//     }
+// });
+
 
 // Сторінка акцій
 let data = [
@@ -178,6 +194,172 @@ $('.backBtn').click(function () {
     }
 })
 
+// let totalPrice = 0;
+
+// let numberPaperoni = 0;
+// let numberBarbeku = 0;
+// let numberKarbonara = 0;
+// let numberKantri = 0;
+
+// $(`.cardSelectedPizza`).hide();
+// $(`.cardSelectedPizzaPaperoni`).hide();
+
+// $(`.buyBtn`).click(function () {
+//     if (data[currentPosition].pizzaName == `Папероні`) {
+//         if (numberPaperoni == 0) {
+//             numberPizzaBasket++;
+//             numberPaperoni++;
+//             $(`.cardSelectedPizzaTxtNamePaperoni`).text(data[currentPosition].pizzaName);
+//             $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price} Грн`);
+//             $(`.cardSelectedPizzaPaperoni`).show();
+//             totalPrice += data[currentPosition].price
+//             $(`.price`).text(`${totalPrice} Грн`);
+//         } else if (numberPaperoni >= 1) {
+//             $(`.numberPizzaPaperoni`).text(numberPaperoni + 1);
+//             numberPaperoni++;
+//             numberPizzaBasket++;
+//             $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+//             totalPrice += data[currentPosition].price
+//             $(`.price`).text(`${totalPrice} Грн`);
+//             $(`.cardSelectedPizzaPaperoni`).show();
+//         }
+//     } else if (data[currentPosition].pizzaName == `Барбекю`) {
+//         if (numberBarbeku == 0) {
+//             numberPizzaBasket++;
+//             numberBarbeku++;
+//             $(`.cardSelectedPizzaTxtNameBarbeku`).text(data[currentPosition].pizzaName);
+//             $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price} Грн`);
+//             $(`.cardSelectedPizzaBarbeku`).show();
+//             totalPrice += data[currentPosition].price
+//             $(`.price`).text(`${totalPrice} Грн`);
+//         } else if (numberBarbeku >= 1) {
+//             $(`.numberPizzaBarbeku`).text(numberBarbeku + 1);
+//             numberBarbeku++;
+//             numberPizzaBasket++;
+//             $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberBarbeku} Грн`);
+//             totalPrice += data[currentPosition].price
+//             $(`.price`).text(`${totalPrice} Грн`);
+//             $(`.cardSelectedPizzaBarbeku`).show();
+//         }
+//     }
+//     else if (data[currentPosition].pizzaName == `Карбонара`) {
+//         if (numberKarbonara == 0) {
+//             numberPizzaBasket++;
+//             numberKarbonara++;
+//             //     $('.SelectedPizzaContainer').append(`
+//             //     <div class="cardSelectedPizza">
+//             //     <div class="cardSelectedPizzaImgContainer">
+//             //         <img src="./img/imgPizza/beefandcrispy-pieces.avif" alt="" class="cardSelectedPizzaImg">
+//             //     </div>
+//             //     <div class="cardSelectedPizzaInfoContainer">
+//             //         <p class="cardSelectedPizzaTxtName">${data[currentPosition].pizzaName}</p>
+//             //         <div class="priceCardSelectedPizzaContainer">
+//             //             <div class="nuberPizzaConatiner">
+//             //                 <i class="fa-solid fa-plus cursorPointer arrowPluscardSelectedPizzaKarbonara"></i>
+//             //                 <p class="numberPizza numberPizzaKarbonara">1</p>
+//             //                 <i class="fa-solid fa-minus cursorPointer arrowMinuscardSelectedPizzaKarbonara"></i>
+//             //             </div>
+//             //             <p class="priceCardSelectedPizza">${data[currentPosition].price} Грн</p>
+//             //         </div>
+//             //     </div>
+//             // </div>
+//             // `
+//             //     )
+//         } else if (numberKarbonara >= 1) {
+//             $(`.numberPizzaKarbonara`).text(numberKarbonara);
+//             numberKarbonara++;
+//             numberPizzaBasket++;
+//         }
+//     } else if (data[currentPosition].pizzaName == `Кантрі`) {
+//         if (numberKantri == 0) {
+//             numberPizzaBasket++;
+//             numberKantri++;
+//             //     $('.SelectedPizzaContainer').append(`
+//             //     <div class="cardSelectedPizza">
+//             //     <div class="cardSelectedPizzaImgContainer">
+//             //         <img src="./img/imgPizza/beefandcrispy-pieces.avif" alt="" class="cardSelectedPizzaImg">
+//             //     </div>
+//             //     <div class="cardSelectedPizzaInfoContainer">
+//             //         <p class="cardSelectedPizzaTxtName">${data[currentPosition].pizzaName}</p>
+//             //         <div class="priceCardSelectedPizzaContainer">
+//             //             <div class="nuberPizzaConatiner">
+//             //                 <i class="fa-solid fa-plus cursorPointer arrowPluscardSelectedPizzaKantri"></i>
+//             //                 <p class="numberPizza numberPizzaKantri">1</p>
+//             //                 <i class="fa-solid fa-minus cursorPointer arrowMinuscardSelectedPizzaKantri"></i>
+//             //             </div>
+//             //             <p class="priceCardSelectedPizza">${data[currentPosition].price} Грн</p>
+//             //         </div>
+//             //     </div>
+//             // </div>
+//             // `
+//             //     ) 
+//         } else if (numberKantri >= 1) {
+//             $(`.numberPizzaKantri`).text(numberKantri);
+//             numberKantri++;
+//             numberPizzaBasket++;
+//         }
+//     }
+//     $(`.txtNmberOrders`).text(numberPizzaBasket)
+// });
+
+// $(`.arrowPluscardSelectedPizzaBarbeku`).click(function () {
+//     $(`.numberPizzaBarbeku`).text(numberBarbeku + 1);
+//     numberBarbeku++;
+//     numberPizzaBasket++;
+//     $(`.txtNmberOrders`).text(numberPizzaBasket)
+//     $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+//     totalPrice += data[currentPosition].price
+//     $(`.price`).text(`${totalPrice} Грн`);
+// })
+
+// $(`.arrowMinuscardSelectedPizzaBarbeku`).click(function () {
+//     if (numberBarbeku <= 1) {
+//         numberPizzaBasket--;
+//         $(`.cardSelectedPizzaBarbeku`).hide();
+//         $(`.txtNmberOrders`).text(numberPizzaBasket);
+//         $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberBarbeku} Грн`);
+//         numberBarbeku = 0
+//     } else if (numberBarbeku > 0) {
+//         $(`.numberPizzaBarbeku`).text(numberBarbeku - 1);
+//         numberBarbeku--;
+//         numberPizzaBasket--;
+//         $(`.txtNmberOrders`).text(numberPizzaBasket);
+//         $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberBarbeku} Грн`);
+//         totalPrice -= data[currentPosition].price
+//         $(`.price`).text(`${totalPrice} Грн`);
+//     }
+// })
+
+
+// $(`.arrowPluscardSelectedPizzaPaperoni`).click(function () {
+//     $(`.numberPizzaPaperoni`).text(numberPaperoni + 1);
+//     numberPaperoni++;
+//     numberPizzaBasket++;
+//     $(`.txtNmberOrders`).text(numberPizzaBasket)
+//     $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+//     totalPrice += data[currentPosition].price
+//     $(`.price`).text(`${totalPrice} Грн`);
+// })
+
+// $(`.arrowMinuscardSelectedPizzaPaperoni`).click(function () {
+//     if (numberPaperoni <= 1) {
+//         $(`.cardSelectedPizzaPaperoni`).hide();
+//         $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+//         numberPizzaBasket--;
+//         $(`.txtNmberOrders`).text(numberPizzaBasket);
+//         numberPaperoni = 0
+//     } else if (numberPaperoni > 0) {
+//         $(`.numberPizzaPaperoni`).text(numberPaperoni - 1);
+//         numberPaperoni--;
+//         numberPizzaBasket--;
+//         $(`.txtNmberOrders`).text(numberPizzaBasket);
+//         $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+//         totalPrice -= data[currentPosition].price
+//         $(`.price`).text(`${totalPrice} Грн`);
+//     }
+// })
+
+
 
 function showInfo() {
     $('.ingredientContainer').empty();
@@ -195,6 +377,7 @@ function showInfo() {
 }
 
 showInfo();
+
 
 // Сторінка піци
 let peiceSweePizza = 300;
@@ -605,6 +788,61 @@ $(`.pizzaSelectionAddCartBtnHotDogjb`).click(function () {
 
 $(`.pizzaSelectionAddCartBtnLoosejb`).addClass(`chosenSizePizzaItem`);
 
+
+$(`.filterDrinksItemAll`).addClass(`chosenFilterItem`);
+
+$(`.filterDrinksItemAll`).click(function () {
+    $(`.filterDrinksItemAll`).addClass(`chosenFilterItem`);
+    $(`.filterDrinksItemTea`).removeClass(`chosenFilterItem`);
+    $(`.filterDrinksItemCoffee`).removeClass(`chosenFilterItem`);
+    $(`.filterDrinksItemWater`).removeClass(`chosenFilterItem`);
+    checkfilterDrinksItem()
+})
+
+$(`.filterDrinksItemTea`).click(function () {
+    $(`.filterDrinksItemAll`).removeClass(`chosenFilterItem`);
+    $(`.filterDrinksItemTea`).addClass(`chosenFilterItem`);
+    $(`.filterDrinksItemCoffee`).removeClass(`chosenFilterItem`);
+    $(`.filterDrinksItemWater`).removeClass(`chosenFilterItem`);
+    checkfilterDrinksItem()
+})
+
+$(`.filterDrinksItemCoffee`).click(function () {
+    $(`.filterDrinksItemAll`).removeClass(`chosenFilterItem`);
+    $(`.filterDrinksItemTea`).removeClass(`chosenFilterItem`);
+    $(`.filterDrinksItemCoffee`).addClass(`chosenFilterItem`);
+    $(`.filterDrinksItemWater`).removeClass(`chosenFilterItem`);
+    checkfilterDrinksItem()
+})
+
+$(`.filterDrinksItemWater`).click(function () {
+    $(`.filterDrinksItemAll`).removeClass(`chosenFilterItem`);
+    $(`.filterDrinksItemTea`).removeClass(`chosenFilterItem`);
+    $(`.filterDrinksItemCoffee`).removeClass(`chosenFilterItem`);
+    $(`.filterDrinksItemWater`).addClass(`chosenFilterItem`);
+    checkfilterDrinksItem()
+})
+
+function checkfilterDrinksItem() {
+    if ($(`.filterDrinksItemAll`).hasClass(`chosenFilterItem`)) {
+        $(`.Tea`).show();
+        $(`.Coffee`).show();
+        $(`.Water`).show();
+    } else if ($(`.filterDrinksItemTea`).hasClass(`chosenFilterItem`)) {
+        $(`.Tea`).show();
+        $(`.Coffee`).hide();
+        $(`.Water`).hide();
+    } else if ($(`.filterDrinksItemCoffee`).hasClass(`chosenFilterItem`)) {
+        $(`.Tea`).hide();
+        $(`.Coffee`).show();
+        $(`.Water`).hide();
+    } else if ($(`.filterDrinksItemWater`).hasClass(`chosenFilterItem`)) {
+        $(`.Tea`).hide();
+        $(`.Coffee`).hide();
+        $(`.Water`).show();
+    }
+}
+
 let peiceCola = 37;
 let priceAddedCola1 = false;
 let priceAddedCola2 = false;
@@ -715,6 +953,147 @@ $(`.drinkVolumeBtnMaxColaZero`).click(function () {
 
 $(`.drinkVolumeBtnMinColaZero`).addClass(`chosenSizePizzaItem`);
 checkPeicepeiceColaZero()
+
+$(`.sitesFilterItemAll`).addClass(`chosenFilterItem`);
+
+$(`.sitesFilterItemAll`).click(function () {
+    $(`.sitesFilterItemAll`).addClass(`chosenFilterItem`);
+    $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
+    checkfilterSitesItem()
+})
+
+$(`.sitesFilterItemMinirolls`).click(function () {
+    $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemMinirolls`).addClass(`chosenFilterItem`);
+    $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
+    checkfilterSitesItem()
+})
+
+$(`.sitesFilterItemBreads`).click(function () {
+    $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemBreads`).addClass(`chosenFilterItem`);
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
+    checkfilterSitesItem()
+})
+
+$(`.sitesFilterItemChicken`).click(function () {
+    $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemChicken`).addClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
+    checkfilterSitesItem()
+})
+
+$(`.sitesFilterItemPotatoes`).click(function () {
+    $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemPotatoes`).addClass(`chosenFilterItem`);
+    $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
+    checkfilterSitesItem()
+})
+
+$(`.sitesFilterItemSalads`).click(function () {
+    $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
+    $(`.sitesFilterItemSalads`).addClass(`chosenFilterItem`);
+    checkfilterSitesItem()
+})
+
+function checkfilterSitesItem() {
+    if ($(`.sitesFilterItemAll`).hasClass(`chosenFilterItem`)) {
+        $(`.Minirolls`).show();
+        $(`.Breads`).show();
+        $(`.Chicken`).show();
+        $(`.Potatoes`).show();
+        $(`.Salads`).show();
+    } else if ($(`.sitesFilterItemMinirolls`).hasClass(`chosenFilterItem`)) {
+        $(`.Minirolls`).show();
+        $(`.Breads`).hide();
+        $(`.Chicken`).hide();
+        $(`.Potatoes`).hide();
+        $(`.Salads`).hide();
+    } else if ($(`.sitesFilterItemBreads`).hasClass(`chosenFilterItem`)) {
+        $(`.Minirolls`).hide();
+        $(`.Breads`).show();
+        $(`.Chicken`).hide();
+        $(`.Potatoes`).hide();
+        $(`.Salads`).hide();
+    } else if ($(`.sitesFilterItemChicken`).hasClass(`chosenFilterItem`)) {
+        $(`.Minirolls`).hide();
+        $(`.Breads`).hide();
+        $(`.Chicken`).show();
+        $(`.Potatoes`).hide();
+        $(`.Salads`).hide();
+    } else if ($(`.sitesFilterItemPotatoes`).hasClass(`chosenFilterItem`)) {
+        $(`.Minirolls`).hide();
+        $(`.Breads`).hide();
+        $(`.Chicken`).hide();
+        $(`.Potatoes`).show();
+        $(`.Salads`).hide();
+    } else if ($(`.sitesFilterItemSalads`).hasClass(`chosenFilterItem`)) {
+        $(`.Minirolls`).hide();
+        $(`.Breads`).hide();
+        $(`.Chicken`).hide();
+        $(`.Potatoes`).hide();
+        $(`.Salads`).show();
+    }
+}
+
+$(`.dessertsFilterItemAll`).addClass(`chosenFilterItem`);
+
+$(`.dessertsFilterItemAll`).click(function () {
+    $(`.dessertsFilterItemAll`).addClass(`chosenFilterItem`);
+    $(`.dessertsFilterItemDesserts`).removeClass(`chosenFilterItem`);
+    $(`.dessertsFilterItemIceCream`).removeClass(`chosenFilterItem`);
+    checkfilterItem()
+})
+
+$(`.dessertsFilterItemDesserts`).click(function () {
+    $(`.dessertsFilterItemAll`).removeClass(`chosenFilterItem`);
+    $(`.dessertsFilterItemDesserts`).addClass(`chosenFilterItem`);
+    $(`.dessertsFilterItemIceCream`).removeClass(`chosenFilterItem`);
+    checkfilterItem()
+})
+
+$(`.dessertsFilterItemIceCream`).click(function () {
+    $(`.dessertsFilterItemAll`).removeClass(`chosenFilterItem`);
+    $(`.dessertsFilterItemDesserts`).removeClass(`chosenFilterItem`);
+    $(`.dessertsFilterItemIceCream`).addClass(`chosenFilterItem`);
+    checkfilterItem()
+})
+
+function checkfilterItem() {
+    if ($(`.dessertsFilterItemAll`).hasClass(`chosenFilterItem`)) {
+        $(`.Desserts`).show();
+        $(`.IceCream`).show();
+    } else if ($(`.dessertsFilterItemDesserts`).hasClass(`chosenFilterItem`)) {
+        $(`.Desserts`).show();
+        $(`.IceCream`).hide();
+    } else if ($(`.dessertsFilterItemIceCream`).hasClass(`chosenFilterItem`)) {
+        $(`.Desserts`).hide();
+        $(`.IceCream`).show();
+    }
+}
+
+
+
 // Сторінка піца конструктора
 $(`.popupContainer`).hide();
 $(`.standard`).addClass('chosenSizePizzaItem');
