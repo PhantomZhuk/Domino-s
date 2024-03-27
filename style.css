@@ -354,7 +354,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
 }
 
 .banner-slider {
@@ -363,16 +362,18 @@ header {
 }
 
 .banner-slider img {
-    height: 100%;
+    width: 100%;
 }
 
 .NumberCustomersContainer {
     width: 100%;
-    height: 30vh;
+    min-height: 30vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
+    flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .NumberCustomersItem {
@@ -386,6 +387,7 @@ header {
     align-items: center;
     padding: 40px 12px;
     color: #fff;
+    margin: 10px;
 }
 
 /* Сторінка акцій  */
@@ -1500,6 +1502,10 @@ h1 {
 @media screen and (max-width: 900px) {
     .actionItemContainer {
         right: 100px;
+    }
+    
+    .NumberCustomersContainer {
+        justify-content: center;
     }
 }
 
