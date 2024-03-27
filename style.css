@@ -332,11 +332,67 @@ header {
     font-size: 16px;
 }
 
+.home {
+    cursor: pointer;
+}
+
+.homePage {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.BannerContainer {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.banner-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-slider img {
+    height: 100%;
+}
+
+.NumberCustomersContainer {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.NumberCustomersItem {
+    width: 300px;
+    height: 150px;
+    background-color: #3b3b3b;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 12px;
+    color: #fff;
+}
+
 /* Сторінка акцій  */
 .sharesPage {
     width: 100%;
     min-height: 90vh;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding-right: 200px;
