@@ -104,19 +104,19 @@ $(`.pizzaConstructor`).click(function () {
 })
 $(`.SelectedOrderContainer`).hide()
 
-// let numberPizzaBasket = 0;
-// $(`.basketContainer`).click(function () {
-//     $(`.SelectedOrderContainer`).toggle();
-//     if (numberPizzaBasket == 0) {
-//         $(`.SelectedOrderContainerFalse`).css(`display`, `flex`)
-//         $(`.SelectedOrderContainerTrue`).css(`display`, `none`)
-//         // haveOrderCart = true
-//     } else if (numberPizzaBasket >= 1) {
-//         $(`.SelectedOrderContainerFalse`).css(`display`, `none`)
-//         $(`.SelectedOrderContainerTrue`).css(`display`, `flex`)
-//         // haveOrderCart = false
-//     }
-// });
+let numberPizzaBasket = 0;
+$(`.basketContainer`).click(function () {
+    $(`.SelectedOrderContainer`).toggle();
+    if (numberPizzaBasket == 0) {
+        $(`.SelectedOrderContainerFalse`).css(`display`, `flex`)
+        $(`.SelectedOrderContainerTrue`).css(`display`, `none`)
+        // haveOrderCart = true
+    } else if (numberPizzaBasket >= 1) {
+        $(`.SelectedOrderContainerFalse`).css(`display`, `none`)
+        $(`.SelectedOrderContainerTrue`).css(`display`, `flex`)
+        // haveOrderCart = false
+    }
+});
 
 
 // Сторінка акцій
@@ -194,172 +194,229 @@ $('.backBtn').click(function () {
     }
 })
 
-// let totalPrice = 0;
+let totalPrice = 0;
 
-// let numberPaperoni = 0;
-// let numberBarbeku = 0;
-// let numberKarbonara = 0;
-// let numberKantri = 0;
+let numberPaperoni = 0;
+let numberBarbeku = 0;
+let numberKarbonara = 0;
+let numberKantri = 0;
 
-// $(`.cardSelectedPizza`).hide();
-// $(`.cardSelectedPizzaPaperoni`).hide();
+$(`.cardSelectedPizza`).hide();
+$(`.cardSelectedPizzaPaperoni`).hide();
 
-// $(`.buyBtn`).click(function () {
-//     if (data[currentPosition].pizzaName == `Папероні`) {
-//         if (numberPaperoni == 0) {
-//             numberPizzaBasket++;
-//             numberPaperoni++;
-//             $(`.cardSelectedPizzaTxtNamePaperoni`).text(data[currentPosition].pizzaName);
-//             $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price} Грн`);
-//             $(`.cardSelectedPizzaPaperoni`).show();
-//             totalPrice += data[currentPosition].price
-//             $(`.price`).text(`${totalPrice} Грн`);
-//         } else if (numberPaperoni >= 1) {
-//             $(`.numberPizzaPaperoni`).text(numberPaperoni + 1);
-//             numberPaperoni++;
-//             numberPizzaBasket++;
-//             $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
-//             totalPrice += data[currentPosition].price
-//             $(`.price`).text(`${totalPrice} Грн`);
-//             $(`.cardSelectedPizzaPaperoni`).show();
-//         }
-//     } else if (data[currentPosition].pizzaName == `Барбекю`) {
-//         if (numberBarbeku == 0) {
-//             numberPizzaBasket++;
-//             numberBarbeku++;
-//             $(`.cardSelectedPizzaTxtNameBarbeku`).text(data[currentPosition].pizzaName);
-//             $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price} Грн`);
-//             $(`.cardSelectedPizzaBarbeku`).show();
-//             totalPrice += data[currentPosition].price
-//             $(`.price`).text(`${totalPrice} Грн`);
-//         } else if (numberBarbeku >= 1) {
-//             $(`.numberPizzaBarbeku`).text(numberBarbeku + 1);
-//             numberBarbeku++;
-//             numberPizzaBasket++;
-//             $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberBarbeku} Грн`);
-//             totalPrice += data[currentPosition].price
-//             $(`.price`).text(`${totalPrice} Грн`);
-//             $(`.cardSelectedPizzaBarbeku`).show();
-//         }
-//     }
-//     else if (data[currentPosition].pizzaName == `Карбонара`) {
-//         if (numberKarbonara == 0) {
-//             numberPizzaBasket++;
-//             numberKarbonara++;
-//             //     $('.SelectedPizzaContainer').append(`
-//             //     <div class="cardSelectedPizza">
-//             //     <div class="cardSelectedPizzaImgContainer">
-//             //         <img src="./img/imgPizza/beefandcrispy-pieces.avif" alt="" class="cardSelectedPizzaImg">
-//             //     </div>
-//             //     <div class="cardSelectedPizzaInfoContainer">
-//             //         <p class="cardSelectedPizzaTxtName">${data[currentPosition].pizzaName}</p>
-//             //         <div class="priceCardSelectedPizzaContainer">
-//             //             <div class="nuberPizzaConatiner">
-//             //                 <i class="fa-solid fa-plus cursorPointer arrowPluscardSelectedPizzaKarbonara"></i>
-//             //                 <p class="numberPizza numberPizzaKarbonara">1</p>
-//             //                 <i class="fa-solid fa-minus cursorPointer arrowMinuscardSelectedPizzaKarbonara"></i>
-//             //             </div>
-//             //             <p class="priceCardSelectedPizza">${data[currentPosition].price} Грн</p>
-//             //         </div>
-//             //     </div>
-//             // </div>
-//             // `
-//             //     )
-//         } else if (numberKarbonara >= 1) {
-//             $(`.numberPizzaKarbonara`).text(numberKarbonara);
-//             numberKarbonara++;
-//             numberPizzaBasket++;
-//         }
-//     } else if (data[currentPosition].pizzaName == `Кантрі`) {
-//         if (numberKantri == 0) {
-//             numberPizzaBasket++;
-//             numberKantri++;
-//             //     $('.SelectedPizzaContainer').append(`
-//             //     <div class="cardSelectedPizza">
-//             //     <div class="cardSelectedPizzaImgContainer">
-//             //         <img src="./img/imgPizza/beefandcrispy-pieces.avif" alt="" class="cardSelectedPizzaImg">
-//             //     </div>
-//             //     <div class="cardSelectedPizzaInfoContainer">
-//             //         <p class="cardSelectedPizzaTxtName">${data[currentPosition].pizzaName}</p>
-//             //         <div class="priceCardSelectedPizzaContainer">
-//             //             <div class="nuberPizzaConatiner">
-//             //                 <i class="fa-solid fa-plus cursorPointer arrowPluscardSelectedPizzaKantri"></i>
-//             //                 <p class="numberPizza numberPizzaKantri">1</p>
-//             //                 <i class="fa-solid fa-minus cursorPointer arrowMinuscardSelectedPizzaKantri"></i>
-//             //             </div>
-//             //             <p class="priceCardSelectedPizza">${data[currentPosition].price} Грн</p>
-//             //         </div>
-//             //     </div>
-//             // </div>
-//             // `
-//             //     ) 
-//         } else if (numberKantri >= 1) {
-//             $(`.numberPizzaKantri`).text(numberKantri);
-//             numberKantri++;
-//             numberPizzaBasket++;
-//         }
-//     }
-//     $(`.txtNmberOrders`).text(numberPizzaBasket)
-// });
+$(`.buyBtn`).click(function () {
+    if (data[currentPosition].pizzaName == `Папероні`) {
+        if (numberPaperoni == 0) {
+            numberPizzaBasket++;
+            numberPaperoni++;
+            $(`.cardSelectedPizzaTxtNamePaperoni`).text(data[currentPosition].pizzaName);
+            $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price} Грн`);
+            $(`.cardSelectedPizzaPaperoni`).show();
+            totalPrice += data[currentPosition].price
+            $(`.price`).text(`${totalPrice} Грн`);
+        } else if (numberPaperoni >= 1) {
+            $(`.numberPizzaPaperoni`).text(numberPaperoni + 1);
+            numberPaperoni++;
+            numberPizzaBasket++;
+            $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+            totalPrice += data[currentPosition].price
+            $(`.price`).text(`${totalPrice} Грн`);
+            $(`.cardSelectedPizzaPaperoni`).show();
+        }
+    } else if (data[currentPosition].pizzaName == `Барбекю`) {
+        if (numberBarbeku == 0) {
+            numberPizzaBasket++;
+            numberBarbeku++;
+            $(`.cardSelectedPizzaTxtNameBarbeku`).text(data[currentPosition].pizzaName);
+            $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price} Грн`);
+            $(`.cardSelectedPizzaBarbeku`).show();
+            totalPrice += data[currentPosition].price
+            $(`.price`).text(`${totalPrice} Грн`);
+        } else if (numberBarbeku >= 1) {
+            $(`.numberPizzaBarbeku`).text(numberBarbeku + 1);
+            numberBarbeku++;
+            numberPizzaBasket++;
+            $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberBarbeku} Грн`);
+            totalPrice += data[currentPosition].price
+            $(`.price`).text(`${totalPrice} Грн`);
+            $(`.cardSelectedPizzaBarbeku`).show();
+        }
+    }
+    else if (data[currentPosition].pizzaName == `Карбонара`) {
+        if (numberKarbonara == 0) {
+            numberPizzaBasket++;
+            numberKarbonara++;
+            $(`.cardSelectedPizzaTxtNameKarbonara`).text(data[currentPosition].pizzaName);
+            $(`.priceCardSelectedPizzaKarbonara`).text(`${data[currentPosition].price} Грн`);
+            $(`.cardSelectedPizzaKarbonara`).show();
+            totalPrice += data[currentPosition].price;
+            $(`.price`).text(`${totalPrice} Грн`);
+            $(`.numberPizzaKarbonara`).text(numberKarbonara);
+        } else if (numberKarbonara >= 1) {
+            $(`.numberPizzaKarbonara`).text(numberKarbonara + 1);
+            numberKarbonara++;
+            numberPizzaBasket++;
+            $(`.priceCardSelectedPizzaKarbonara`).text(`${data[currentPosition].price * numberKarbonara} Грн`);
+            totalPrice += data[currentPosition].price;
+            $(`.price`).text(`${totalPrice} Грн`);
+            $(`.cardSelectedPizzaKarbonara`).show();
+        }
+    } else if (data[currentPosition].pizzaName == `Кантрі`) {
+        if (numberKantri == 0) {
+            numberPizzaBasket++;
+            numberKantri++;
+            $(`.cardSelectedPizzaTxtNameKantri`).text(data[currentPosition].pizzaName);
+            $(`.priceCardSelectedPizzaKantri`).text(`${data[currentPosition].price} Грн`);
+            $(`.cardSelectedPizzaKantri`).show();
+            totalPrice += data[currentPosition].price;
+            $(`.price`).text(`${totalPrice} Грн`);
+            $(`.numberPizzaKantri`).text(numberKantri);
+        } else if (numberKantri >= 1) {
+            $(`.numberPizzaKantri`).text(numberKantri + 1);
+            numberKantri++;
+            numberPizzaBasket++;
+            $(`.priceCardSelectedPizzaKantri`).text(`${data[currentPosition].price * numberKantri} Грн`);
+            totalPrice += data[currentPosition].price;
+            $(`.price`).text(`${totalPrice} Грн`);
+            $(`.cardSelectedPizzaKantri`).show();
+        }
+    }
+    $(`.txtNmberOrders`).text(numberPizzaBasket)
+});
 
-// $(`.arrowPluscardSelectedPizzaBarbeku`).click(function () {
-//     $(`.numberPizzaBarbeku`).text(numberBarbeku + 1);
-//     numberBarbeku++;
-//     numberPizzaBasket++;
-//     $(`.txtNmberOrders`).text(numberPizzaBasket)
-//     $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
-//     totalPrice += data[currentPosition].price
-//     $(`.price`).text(`${totalPrice} Грн`);
-// })
+$(`.arrowPluscardSelectedPizzaBarbeku`).click(function () {
+    $(`.numberPizzaBarbeku`).text(numberBarbeku + 1);
+    numberBarbeku++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket)
+    $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+    totalPrice += data[currentPosition].price
+    $(`.price`).text(`${totalPrice} Грн`);
+})
 
-// $(`.arrowMinuscardSelectedPizzaBarbeku`).click(function () {
-//     if (numberBarbeku <= 1) {
-//         numberPizzaBasket--;
-//         $(`.cardSelectedPizzaBarbeku`).hide();
-//         $(`.txtNmberOrders`).text(numberPizzaBasket);
-//         $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberBarbeku} Грн`);
-//         numberBarbeku = 0
-//     } else if (numberBarbeku > 0) {
-//         $(`.numberPizzaBarbeku`).text(numberBarbeku - 1);
-//         numberBarbeku--;
-//         numberPizzaBasket--;
-//         $(`.txtNmberOrders`).text(numberPizzaBasket);
-//         $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberBarbeku} Грн`);
-//         totalPrice -= data[currentPosition].price
-//         $(`.price`).text(`${totalPrice} Грн`);
-//     }
-// })
+$(`.arrowMinuscardSelectedPizzaBarbeku`).click(function () {
+    if (numberBarbeku <= 1) {
+        numberPizzaBasket--;
+        $(`.cardSelectedPizzaBarbeku`).hide();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= data[currentPosition].price;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberBarbeku} Грн`);
+        numberBarbeku = 0
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberBarbeku > 0) {
+        $(`.numberPizzaBarbeku`).text(numberBarbeku - 1);
+        numberBarbeku--;
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaBarbeku`).text(`${data[currentPosition].price * numberBarbeku} Грн`);
+        totalPrice -= data[currentPosition].price
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+})
 
 
-// $(`.arrowPluscardSelectedPizzaPaperoni`).click(function () {
-//     $(`.numberPizzaPaperoni`).text(numberPaperoni + 1);
-//     numberPaperoni++;
-//     numberPizzaBasket++;
-//     $(`.txtNmberOrders`).text(numberPizzaBasket)
-//     $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
-//     totalPrice += data[currentPosition].price
-//     $(`.price`).text(`${totalPrice} Грн`);
-// })
+$(`.arrowPluscardSelectedPizzaPaperoni`).click(function () {
+    $(`.numberPizzaPaperoni`).text(numberPaperoni + 1);
+    numberPaperoni++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket)
+    $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+    totalPrice += data[currentPosition].price
+    $(`.price`).text(`${totalPrice} Грн`);
+})
 
-// $(`.arrowMinuscardSelectedPizzaPaperoni`).click(function () {
-//     if (numberPaperoni <= 1) {
-//         $(`.cardSelectedPizzaPaperoni`).hide();
-//         $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
-//         numberPizzaBasket--;
-//         $(`.txtNmberOrders`).text(numberPizzaBasket);
-//         numberPaperoni = 0
-//     } else if (numberPaperoni > 0) {
-//         $(`.numberPizzaPaperoni`).text(numberPaperoni - 1);
-//         numberPaperoni--;
-//         numberPizzaBasket--;
-//         $(`.txtNmberOrders`).text(numberPizzaBasket);
-//         $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
-//         totalPrice -= data[currentPosition].price
-//         $(`.price`).text(`${totalPrice} Грн`);
-//     }
-// })
+$(`.arrowMinuscardSelectedPizzaPaperoni`).click(function () {
+    if (numberPaperoni <= 1) {
+        $(`.cardSelectedPizzaPaperoni`).hide();
+        $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= data[currentPosition].price;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberPaperoni = 0;
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberPaperoni > 0) {
+        $(`.numberPizzaPaperoni`).text(numberPaperoni - 1);
+        numberPaperoni--;
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaPaperoni`).text(`${data[currentPosition].price * numberPaperoni} Грн`);
+        totalPrice -= data[currentPosition].price;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+})
 
 
+$(`.arrowPluscardSelectedPizzaKarbonara`).click(function () {
+    $(`.numberPizzaKarbonara`).text(numberKarbonara + 1);
+    numberKarbonara++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket)
+    $(`.priceCardSelectedPizzaKarbonara`).text(`${data[currentPosition].price * numberKarbonara} Грн`);
+    totalPrice += data[currentPosition].price
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaKarbonara`).click(function () {
+    if (numberKarbonara <= 1) {
+        $(`.cardSelectedPizzaKarbonara`).hide();
+        $(`.priceCardSelectedPizzaKarbonara`).text(`${data[currentPosition].price * numberKarbonara} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= data[currentPosition].price;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberKarbonara = 0;
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberKarbonara > 0) {
+        $(`.numberPizzaKarbonara`).text(numberKarbonara - 1);
+        numberKarbonara--;
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaKarbonara`).text(`${data[currentPosition].price * numberKarbonara} Грн`);
+        totalPrice -= data[currentPosition].price;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+})
+
+$(`.arrowPluscardSelectedPizzaKantri`).click(function () {
+    $(`.numberPizzaKantri`).text(numberKantri + 1);
+    numberKantri++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket)
+    $(`.priceCardSelectedPizzaKantri`).text(`${data[currentPosition].price * numberKantri} Грн`);
+    totalPrice += data[currentPosition].price
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaKantri`).click(function () {
+    if (numberKantri <= 1) {
+        $(`.cardSelectedPizzaKantri`).hide();
+        $(`.priceCardSelectedPizzaKantri`).text(`${data[currentPosition].price * numberKantri} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= data[currentPosition].price;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberKantri = 0;
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberKantri > 0) {
+        $(`.numberPizzaKantri`).text(numberKantri - 1);
+        numberKantri--;
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaKantri`).text(`${data[currentPosition].price * numberKantri} Грн`);
+        totalPrice -= data[currentPosition].price;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+})
 
 function showInfo() {
     $('.ingredientContainer').empty();
@@ -678,8 +735,6 @@ $(`.pizzaSelectionAddCartBtnHotDogpearandbluecheese`).click(function () {
 $(`.pizzaSelectionAddCartBtnLoosepearandbluecheese`).addClass(`chosenSizePizzaItem`);
 checkPeicepeicepearandbluecheese();
 
-
-//
 let peicejb = 305;
 let priceAddedjb1 = false;
 let priceAddedjb2 = false;
@@ -898,7 +953,6 @@ $(`.drinkVolumeBtnMaxCola`).click(function () {
 $(`.drinkVolumeBtnMinCola`).addClass(`chosenSizePizzaItem`);
 checkPeicepeiceCola()
 
-//
 let peiceColaZero = 37;
 let priceAddedColaZero1 = false;
 let priceAddedColaZero2 = false;
@@ -960,7 +1014,7 @@ $(`.sitesFilterItemAll`).click(function () {
     $(`.sitesFilterItemAll`).addClass(`chosenFilterItem`);
     $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
-    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
     checkfilterSitesItem()
@@ -970,7 +1024,7 @@ $(`.sitesFilterItemMinirolls`).click(function () {
     $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemMinirolls`).addClass(`chosenFilterItem`);
     $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
-    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
     checkfilterSitesItem()
@@ -980,7 +1034,7 @@ $(`.sitesFilterItemBreads`).click(function () {
     $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemBreads`).addClass(`chosenFilterItem`);
-    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
     checkfilterSitesItem()
@@ -990,7 +1044,7 @@ $(`.sitesFilterItemChicken`).click(function () {
     $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
-    $(`.sitesFilterItemChicken`).addClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemChicken`).addClass(`chosenFilterItem`);
     $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
     checkfilterSitesItem()
@@ -1000,7 +1054,7 @@ $(`.sitesFilterItemPotatoes`).click(function () {
     $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
-    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemPotatoes`).addClass(`chosenFilterItem`);
     $(`.sitesFilterItemSalads`).removeClass(`chosenFilterItem`);
     checkfilterSitesItem()
@@ -1010,7 +1064,7 @@ $(`.sitesFilterItemSalads`).click(function () {
     $(`.sitesFilterItemAll`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemMinirolls`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemBreads`).removeClass(`chosenFilterItem`);
-    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`); 
+    $(`.sitesFilterItemChicken`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemPotatoes`).removeClass(`chosenFilterItem`);
     $(`.sitesFilterItemSalads`).addClass(`chosenFilterItem`);
     checkfilterSitesItem()
@@ -1092,7 +1146,1275 @@ function checkfilterItem() {
     }
 }
 
+// $('.cleanBtn').click(function(){
+//     numberPizzaBasket = 0.;
+//     totalPrice = 0;
+//     $(`.price`).text(`${totalPrice} Грн`);
+//     $(`.txtNmberOrders`).text(numberPizzaBasket);
+//     numberSweet = 0;
+//     numberCrispy = 0;
+//     numberpearandbluecheese = 0;
+//     numberjb = 0;
+//     numberlemongrassGinger = 0;
+//     numberbasilcurrant = 0;
+//     numberraspberrymint = 0;
+//     numbericepressolatte = 0;
+//     numbericepresso = 0;
+//     numberbonaquabig = 0;
+//     numberngmin = 0;
+//     numberCola = 0;
+//     numberColaZero = 0;
+//     numberpepperonipeppers = 0;
+//     numberbeefonions = 0;
+//     numberhammushrooms = 0;
+//     numberkhlebets = 0;
+//     numberproduct = 0;
+//     numbervyshneiu = 0;
+//     numberchocoroll = 0;
+//     numberkrem = 0;
+//     numbepizzaConstructor = 0;
+//     $(`.cardSelectedPizza`).hide()
+//     $(`.SelectedOrderContainer`).hide()
+// })
 
+
+let numberSweet = 0;
+$(`.pizzaSelectionAddCartBtnSweet`).click(function () {
+    if (numberSweet == 0) {
+        numberPizzaBasket++;
+        numberSweet++;
+        $(`.cardSelectedPizzaTxtNamenumberPizza`).text(`Піца Солодка`);
+        $(`.priceCardSelectedPizzaSweet`).text(`${peiceSweePizza} Грн`);
+        $(`.cardSelectedPizzaSweet`).show();
+        totalPrice += peiceSweePizza;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket)
+    } else if (numberSweet >= 1) {
+        $(`.numberPizzaSweet`).text(numberSweet + 1);
+        numberSweet++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzaSweet`).text(`${peiceSweePizza * numberSweet} Грн`);
+        totalPrice += peiceSweePizza
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzaSweet`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket)
+    }
+});
+
+$(`.arrowPluscardSelectedPizzaSweet`).click(function () {
+    $(`.numberPizzaSweet`).text(numberSweet + 1);
+    numberSweet++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket)
+    $(`.priceCardSelectedPizzaSweet`).text(`${peiceSweePizza * numberSweet} Грн`);
+    totalPrice += peiceSweePizza;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaSweet`).click(function () {
+    if (numberSweet <= 1) {
+        $(`.cardSelectedPizzaSweet`).hide();
+        $(`.priceCardSelectedPizzaSweet`).text(`${peiceSweePizza * numberSweet} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= peiceSweePizza;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberSweet = 0;
+        if (numberPizzaBasket == 0) {
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberSweet > 0) {
+        numberSweet--;
+        $(`.numberPizzaSweet`).text(numberSweet);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaSweet`).text(`${peiceSweePizza * numberSweet} Грн`);
+        totalPrice -= peiceSweePizza;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+
+let numberCrispy = 0;
+$(`.pizzaSelectionAddCartBtnCrispy`).click(function () {
+    if (numberCrispy == 0) {
+        numberPizzaBasket++;
+        numberCrispy++;
+        $(`.cardSelectedPizzaTxtNamenumberPizzaCrispy`).text(`Піца Біф енд Кріспі`);
+        $(`.priceCardSelectedPizzaCrispy`).text(`${peicebeefandcrispy} Грн`);
+        $(`.cardSelectedPizzaCrispy`).show();
+        totalPrice += peicebeefandcrispy;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberCrispy >= 1) {
+        $(`.numberPizzaCrispy`).text(numberCrispy + 1);
+        numberCrispy++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzaCrispy`).text(`${peicebeefandcrispy * numberCrispy} Грн`);
+        totalPrice += peicebeefandcrispy;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzaCrispy`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzaCrispy`).click(function () {
+    $(`.numberPizzaCrispy`).text(numberCrispy + 1);
+    numberCrispy++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzaCrispy`).text(`${peicebeefandcrispy * numberCrispy} Грн`);
+    totalPrice += peicebeefandcrispy;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaCrispy`).click(function () {
+    if (numberCrispy == 1) {
+        $(`.priceCardSelectedPizzaCrispy`).text(`${peicebeefandcrispy} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= peicebeefandcrispy;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberCrispy = 0;
+        $(`.cardSelectedPizzaCrispy`).hide();
+        if (numberPizzaBasket === 0) {
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberCrispy >= 1) {
+        numberCrispy--;
+        $(`.numberPizzaCrispy`).text(numberCrispy);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaCrispy`).text(`${peicebeefandcrispy * numberCrispy} Грн`);
+        totalPrice -= peicebeefandcrispy;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+
+let numberpearandbluecheese = 0;
+$(`.pizzaSelectionAddCartBtnpearandbluecheese`).click(function () {
+    if (numberpearandbluecheese == 0) {
+        numberPizzaBasket++;
+        numberpearandbluecheese++;
+        $(`.cardSelectedPizzaTxtNamepearandbluecheese`).text(`Піца з грушею і блакитним сиром`);
+        $(`.priceCardSelectedPizzapearandbluecheese`).text(`${peicepearandbluecheese} Грн`);
+        $(`.cardSelectedPizzapearandbluecheese`).show();
+        totalPrice += peicepearandbluecheese;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberpearandbluecheese >= 1) {
+        $(`.numberPizzapearandbluecheese`).text(numberpearandbluecheese + 1);
+        numberpearandbluecheese++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzaCrispy`).text(`${peicepearandbluecheese * numberpearandbluecheese} Грн`);
+        totalPrice += peicepearandbluecheese;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzapearandbluecheese`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzapearandbluecheese`).click(function () {
+    $(`.numberPizzapearandbluecheese`).text(numberpearandbluecheese + 1);
+    numberpearandbluecheese++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzapearandbluecheese`).text(`${peicepearandbluecheese * numberpearandbluecheese} Грн`);
+    totalPrice += peicepearandbluecheese;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzapearandbluecheese`).click(function () {
+    if (numberpearandbluecheese <= 1) {
+        $(`.priceCardSelectedPizzapearandbluecheese`).text(`${peicepearandbluecheese * numberpearandbluecheese} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= peicepearandbluecheese;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberpearandbluecheese = 0;
+        $(`.cardSelectedPizzaCrispy`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberpearandbluecheese > 0) {
+        numberpearandbluecheese--;
+        $(`.numberPizzapearandbluecheese`).text(numberpearandbluecheese);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzapearandbluecheese`).text(`${peicebeefandcrispy * numberpearandbluecheese} Грн`);
+        totalPrice -= peicebeefandcrispy;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+
+let numberjb = 0;
+$(`.pizzaSelectionAddCartBtnjb`).click(function () {
+    if (numberjb == 0) {
+        numberPizzaBasket++;
+        numberjb++;
+        $(`.cardSelectedPizzaTxtNamejb`).text(`Піца Джамайка Бомбастик`);
+        $(`.priceCardSelectedPizzajb`).text(`${peicejb} Грн`);
+        $(`.cardSelectedPizzajb`).show();
+        totalPrice += peicejb;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberjb >= 1) {
+        $(`.numberPizzajb`).text(numberjb + 1);
+        numberjb++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzajb`).text(`${peicejb * numberjb} Грн`);
+        totalPrice += peicejb;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzajb`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzajb`).click(function () {
+    $(`.numberPizzajb`).text(numberjb + 1);
+    numberjb++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzajb`).text(`${peicejb * numberjb} Грн`);
+    totalPrice += peicejb;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzajb`).click(function () {
+    if (numberjb <= 1) {
+        $(`.priceCardSelectedPizzajb`).text(`${peicejb * numberjb} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= peicejb;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberjb = 0;
+        $(`.cardSelectedPizzajb`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberjb > 0) {
+        numberjb--;
+        $(`.numberPizzajb`).text(numberjb);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzajb`).text(`${peicejb * numberjb} Грн`);
+        totalPrice -= peicejb;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+
+
+let numberlemongrassGinger = 0;
+$(`.drinksSelectionAddCartBtnimbyr`).click(function () {
+    if (numberlemongrassGinger == 0) {
+        numberPizzaBasket++;
+        numberlemongrassGinger++;
+        $(`.cardSelectedPizzaTxtNamelemongrassGinger`).text(`Чай імбир лемонграс`);
+        $(`.priceCardSelectedPizzalemongrassGinger`).text(`${40} Грн`);
+        $(`.cardSelectedPizzalemongrassGinger`).show();
+        totalPrice += 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberlemongrassGinger >= 1) {
+        $(`.numberPizzalemongrassGinger`).text(numberlemongrassGinger + 1);
+        numberlemongrassGinger++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzalemongrassGinger`).text(`${40 * numberlemongrassGinger} Грн`);
+        totalPrice += 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzalemongrassGinger`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzalemongrassGinger`).click(function () {
+    $(`.numberPizzalemongrassGinger`).text(numberlemongrassGinger + 1);
+    numberlemongrassGinger++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzalemongrassGinger`).text(`${40 * numberlemongrassGinger} Грн`);
+    totalPrice += 40;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzalemongrassGinger`).click(function () {
+    if (numberlemongrassGinger <= 1) {
+        $(`.priceCardSelectedPizzalemongrassGinger`).text(`${40 * numberlemongrassGinger} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberlemongrassGinger = 0;
+        $(`.cardSelectedPizzalemongrassGinger`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberlemongrassGinger > 0) {
+        numberlemongrassGinger--;
+        $(`.numberPizzalemongrassGinger`).text(numberlemongrassGinger);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzalemongrassGinger`).text(`${40 * numberlemongrassGinger} Грн`);
+        totalPrice -= 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberbasilcurrant = 0;
+$(`.drinksSelectionAddCartBtnsmorodyna`).click(function () {
+    if (numberbasilcurrant == 0) {
+        numberPizzaBasket++;
+        numberbasilcurrant++;
+        $(`.cardSelectedPizzaTxtNamebasilcurrant`).text(`Чай смородина базилік`);
+        $(`.priceCardSelectedPizzabasilcurrant`).text(`${40} Грн`);
+        $(`.cardSelectedPizzabasilcurrant`).show();
+        totalPrice += 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberbasilcurrant >= 1) {
+        $(`.numberPizzabasilcurrant`).text(numberbasilcurrant + 1);
+        numberbasilcurrant++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzabasilcurrant`).text(`${40 * numberbasilcurrant} Грн`);
+        totalPrice += 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzabasilcurrant`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzabasilcurrant`).click(function () {
+    $(`.numberPizzabasilcurrant`).text(numberbasilcurrant + 1);
+    numberbasilcurrant++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzabasilcurrant`).text(`${40 * numberbasilcurrant} Грн`);
+    totalPrice += 40;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzabasilcurrant`).click(function () {
+    if (numberbasilcurrant <= 1) {
+        $(`.priceCardSelectedPizzabasilcurrant`).text(`${40 * numberbasilcurrant} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberbasilcurrant = 0;
+        $(`.cardSelectedPizzabasilcurrant`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberbasilcurrant > 0) {
+        numberbasilcurrant--;
+        $(`.numberPizzabasilcurrant`).text(numberbasilcurrant);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzabasilcurrant`).text(`${40 * numberbasilcurrant} Грн`);
+        totalPrice -= 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberraspberrymint = 0;
+$(`.drinksSelectionAddCartBtnmalyna`).click(function () {
+    if (numberraspberrymint == 0) {
+        numberPizzaBasket++;
+        numberraspberrymint++;
+        $(`.cardSelectedPizzaTxtNameraspberrymint`).text(`Чай малина м'ята`);
+        $(`.priceCardSelectedPizzaraspberrymint`).text(`${40} Грн`);
+        $(`.cardSelectedPizzaraspberrymint`).show();
+        totalPrice += 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberraspberrymint >= 1) {
+        $(`.numberPizzaraspberrymint`).text(numberraspberrymint + 1);
+        numberraspberrymint++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzaraspberrymint`).text(`${40 * numberraspberrymint} Грн`);
+        totalPrice += 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzaraspberrymint`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzaraspberrymint`).click(function () {
+    $(`.numberPizzaraspberrymint`).text(numberraspberrymint + 1);
+    numberraspberrymint++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzaraspberrymint`).text(`${40 * numberraspberrymint} Грн`);
+    totalPrice += 40;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaraspberrymint`).click(function () {
+    if (numberraspberrymint <= 1) {
+        $(`.priceCardSelectedPizzaraspberrymint`).text(`${40 * numberraspberrymint} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberraspberrymint = 0;
+        $(`.cardSelectedPizzabasilcurrant`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberraspberrymint > 0) {
+        numberraspberrymint--;
+        $(`.numberPizzaraspberrymint`).text(numberraspberrymint);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaraspberrymint`).text(`${40 * numberraspberrymint} Грн`);
+        totalPrice -= 40;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numbericepressolatte = 0;
+$(`.drinksSelectionAddCartBtnicepressolatte`).click(function () {
+    if (numbericepressolatte == 0) {
+        numberPizzaBasket++;
+        numbericepressolatte++;
+        $(`.cardSelectedPizzaTxtNameicepressolatte`).text(`Холодний кавовий напій АйсПрессо Латте`);
+        $(`.priceCardSelectedPizzaicepressolatte`).text(`${59} Грн`);
+        $(`.cardSelectedPizzaicepressolatte`).show();
+        totalPrice += 59;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numbericepressolatte >= 1) {
+        $(`.numberPizzaicepressolatte`).text(numbericepressolatte + 1);
+        numbericepressolatte++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzaicepressolatte`).text(`${59 * numbericepressolatte} Грн`);
+        totalPrice += 59;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzaicepressolatte`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzaicepressolatte`).click(function () {
+    $(`.numberPizzaicepressolatte`).text(numbericepressolatte + 1);
+    numbericepressolatte++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzaicepressolatte`).text(`${59 * numbericepressolatte} Грн`);
+    totalPrice += 59;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaicepressolatte`).click(function () {
+    if (numbericepressolatte <= 1) {
+        $(`.priceCardSelectedPizzaicepressolatte`).text(`${59 * numbericepressolatte} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 59;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numbericepressolatte = 0;
+        $(`.cardSelectedPizzaicepressolatte`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numbericepressolatte > 0) {
+        numbericepressolatte--;
+        $(`.numberPizzaicepressolatte`).text(numbericepressolatte);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaicepressolatte`).text(`${59 * numbericepressolatte} Грн`);
+        totalPrice -= 59;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numbericepresso = 0;
+$(`.drinksSelectionAddCartBtnicepresso`).click(function () {
+    if (numbericepresso == 0) {
+        numberPizzaBasket++;
+        numbericepresso++;
+        $(`.cardSelectedPizzaTxtNameicepresso`).text(`Холодний кавовий напій АйсПрессо Класік`);
+        $(`.priceCardSelectedPizzaicepresso`).text(`${59} Грн`);
+        $(`.cardSelectedPizzaicepresso`).show();
+        totalPrice += 59;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numbericepresso >= 1) {
+        $(`.numberPizzaicepresso`).text(numbericepresso + 1);
+        numbericepresso++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzaicepresso`).text(`${59 * numbericepresso} Грн`);
+        totalPrice += 59;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzaicepresso`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzaicepresso`).click(function () {
+    $(`.numberPizzaicepresso`).text(numbericepresso + 1);
+    numbericepresso++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzaicepresso`).text(`${59 * numbericepresso} Грн`);
+    totalPrice += 59;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaicepresso`).click(function () {
+    if (numbericepresso <= 1) {
+        $(`.priceCardSelectedPizzaicepresso`).text(`${59 * numbericepresso} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 59;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numbericepresso = 0;
+        $(`.cardSelectedPizzaicepresso`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numbericepresso > 0) {
+        numbericepresso--;
+        $(`.numberPizzaicepresso`).text(numbericepresso);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaicepresso`).text(`${59 * numbericepresso} Грн`);
+        totalPrice -= 59;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberbonaquabig = 0;
+$(`.drinksSelectionAddCartBtnbonaquabig`).click(function () {
+    if (numberbonaquabig == 0) {
+        numberPizzaBasket++;
+        numberbonaquabig++;
+        $(`.cardSelectedPizzaTxtNamebonaquabig`).text(`BonAqua газована 0,5`);
+        $(`.priceCardSelectedPizzabonaquabig`).text(`${39} Грн`);
+        $(`.cardSelectedPizzabonaquabig`).show();
+        totalPrice += 39;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberbonaquabig >= 1) {
+        $(`.numberPizzabonaquabig`).text(numberbonaquabig + 1);
+        numberbonaquabig++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzabonaquabig`).text(`${39 * numberbonaquabig} Грн`);
+        totalPrice += 39;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzabonaquabig`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzabonaquabig`).click(function () {
+    $(`.numberPizzabonaquabig`).text(numberbonaquabig + 1);
+    numberbonaquabig++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzabonaquabig`).text(`${39 * numberbonaquabig} Грн`);
+    totalPrice += 39;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzabonaquabig`).click(function () {
+    if (numberbonaquabig <= 1) {
+        $(`.priceCardSelectedPizzabonaquabig`).text(`${39 * numberbonaquabig} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 39;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberbonaquabig = 0;
+        $(`.cardSelectedPizzabonaquabig`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberbonaquabig > 0) {
+        numberbonaquabig--;
+        $(`.numberPizzabonaquabig`).text(numberbonaquabig);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzabonaquabig`).text(`${39 * numberbonaquabig} Грн`);
+        totalPrice -= 39;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+
+let numberngmin = 0;
+$(`.drinksSelectionAddCartBtnngmin`).click(function () {
+    if (numberngmin == 0) {
+        numberPizzaBasket++;
+        numberngmin++;
+        $(`.cardSelectedPizzaTxtNamengmin`).text(`BonAqua негазована 0,5`);
+        $(`.priceCardSelectedPizzangmin`).text(`${39} Грн`);
+        $(`.cardSelectedPizzangmin`).show();
+        totalPrice += 39;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberngmin >= 1) {
+        $(`.numberPizzangmin`).text(numberngmin + 1);
+        numberngmin++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzangmin`).text(`${39 * numberngmin} Грн`);
+        totalPrice += 39;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzangmin`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzangmin`).click(function () {
+    $(`.numberPizzangmin`).text(numberngmin + 1);
+    numberngmin++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzangmin`).text(`${39 * numberngmin} Грн`);
+    totalPrice += 39;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzangmin`).click(function () {
+    if (numberngmin <= 1) {
+        $(`.priceCardSelectedPizzangmin`).text(`${39 * numberngmin} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 39;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberngmin = 0;
+        $(`.cardSelectedPizzangmin`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberngmin > 0) {
+        numberngmin--;
+        $(`.numberPizzangmin`).text(numberngmin);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzangmin`).text(`${39 * numberngmin} Грн`);
+        totalPrice -= 39;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberCola = 0;
+$(`.drinksSelectionAddCartBtnCola`).click(function () {
+    if (numberCola == 0) {
+        numberPizzaBasket++;
+        numberCola++;
+        $(`.cardSelectedPizzaTxtNameCola`).text(`Coca-Cola`);
+        $(`.priceCardSelectedPizzaCola`).text(`${peiceCola} Грн`);
+        $(`.cardSelectedPizzaCola`).show();
+        totalPrice += peiceCola;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberCola >= 1) {
+        $(`.numberPizzaCola`).text(numberCola + 1);
+        numberCola++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzaCola`).text(`${peiceCola * numberCola} Грн`);
+        totalPrice += peiceCola;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzaCola`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzaCola`).click(function () {
+    $(`.numberPizzaCola`).text(numberCola + 1);
+    numberCola++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzaCola`).text(`${peiceCola * numberCola} Грн`);
+    totalPrice += peiceCola;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaCola`).click(function () {
+    if (numberCola <= 1) {
+        $(`.priceCardSelectedPizzaCola`).text(`${peiceCola * numberCola} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= peiceCola;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberCola = 0;
+        $(`.cardSelectedPizzaCola`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberCola > 0) {
+        numberCola--;
+        $(`.numberPizzaCola`).text(numberCola);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaCola`).text(`${peiceCola * numberCola} Грн`);
+        totalPrice -= peiceCola;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberColaZero = 0;
+$(`.drinksSelectionAddCartBtnColaZero`).click(function () {
+    if (numberColaZero == 0) {
+        numberPizzaBasket++;
+        numberColaZero++;
+        $(`.cardSelectedPizzaTxtNameColaZero`).text(`Coca-Cola Zero`);
+        $(`.priceCardSelectedPizzaColaZero`).text(`${peiceColaZero} Грн`);
+        $(`.cardSelectedPizzaColaZero`).show();
+        totalPrice += peiceColaZero;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberColaZero >= 1) {
+        $(`.numberPizzaColaZero`).text(numberColaZero + 1);
+        numberColaZero++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzaColaZero`).text(`${peiceColaZero * numberColaZero} Грн`);
+        totalPrice += peiceColaZero;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzaColaZero`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzaColaZero`).click(function () {
+    $(`.numberPizzaColaZero`).text(numberColaZero + 1);
+    numberColaZero++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzaColaZero`).text(`${peiceColaZero * numberColaZero} Грн`);
+    totalPrice += peiceColaZero;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaColaZero`).click(function () {
+    if (numberColaZero <= 1) {
+        $(`.priceCardSelectedPizzaColaZero`).text(`${peiceColaZero * numberColaZero} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= peiceColaZero;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberColaZero = 0;
+        $(`.cardSelectedPizzaColaZero`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberColaZero > 0) {
+        numberColaZero--;
+        $(`.numberPizzaColaZero`).text(numberColaZero);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaColaZero`).text(`${peiceColaZero * numberColaZero} Грн`);
+        totalPrice -= peiceColaZero;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberpepperonipeppers = 0;
+$(`.sitessSelectionAddCartBtnpepperonipeppers`).click(function () {
+    if (numberpepperonipeppers == 0) {
+        numberPizzaBasket++;
+        numberpepperonipeppers++;
+        $(`.cardSelectedPizzaTxtNamepepperonipeppers`).text(`Мініроли з пепероні та перцем`);
+        $(`.priceCardSelectedPizzapepperonipeppers`).text(`${99} Грн`);
+        $(`.cardSelectedPizzapepperonipeppers`).show();
+        totalPrice += 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberpepperonipeppers >= 1) {
+        $(`.numberPizzapepperonipeppers`).text(numberpepperonipeppers + 1);
+        numberpepperonipeppers++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzapepperonipeppers`).text(`${99 * numberpepperonipeppers} Грн`);
+        totalPrice += 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzapepperonipeppers`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzapepperonipeppers`).click(function () {
+    $(`.numberPizzapepperonipeppers`).text(numberpepperonipeppers + 1);
+    numberpepperonipeppers++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzapepperonipeppers`).text(`${numberpepperonipeppers * numberColaZero} Грн`);
+    totalPrice += 99;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzapepperonipeppers`).click(function () {
+    if (numberpepperonipeppers <= 1) {
+        $(`.priceCardSelectedPizzapepperonipeppers`).text(`${numberpepperonipeppers * numberColaZero} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberpepperonipeppers = 0;
+        $(`.cardSelectedPizzapepperonipeppers`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberpepperonipeppers > 0) {
+        numberpepperonipeppers--;
+        $(`.numberPizzapepperonipeppers`).text(numberpepperonipeppers);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzapepperonipeppers`).text(`${99 * numberpepperonipeppers} Грн`);
+        totalPrice -= 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberbeefonions = 0;
+$(`.sitessSelectionAddCartBtnbeefonions`).click(function () {
+    if (numberbeefonions == 0) {
+        numberPizzaBasket++;
+        numberbeefonions++;
+        $(`.cardSelectedPizzaTxtNamebeefonions`).text(`Мініроли із рваною яловичиною та цибулею`);
+        $(`.priceCardSelectedPizzabeefonions`).text(`${99} Грн`);
+        $(`.cardSelectedPizzabeefonions`).show();
+        totalPrice += 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberbeefonions >= 1) {
+        $(`.numberPizzabeefonions`).text(numberbeefonions + 1);
+        numberbeefonions++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzabeefonions`).text(`${99 * numberbeefonions} Грн`);
+        totalPrice += 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzabeefonions`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzabeefonions`).click(function () {
+    $(`.numberPizzabeefonions`).text(numberbeefonions + 1);
+    numberbeefonions++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzabeefonions`).text(`${numberbeefonions * numberColaZero} Грн`);
+    totalPrice += 99;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzabeefonions`).click(function () {
+    if (numberbeefonions <= 1) {
+        $(`.priceCardSelectedPizzabeefonions`).text(`${numberbeefonions * numberColaZero} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberbeefonions = 0;
+        $(`.cardSelectedPizzabeefonions`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberbeefonions > 0) {
+        numberbeefonions--;
+        $(`.numberPizzabeefonions`).text(numberbeefonions);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzabeefonions`).text(`${99 * numberbeefonions} Грн`);
+        totalPrice -= 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberhammushrooms = 0;
+$(`.sitessSelectionAddCartBtnhammushrooms`).click(function () {
+    if (numberhammushrooms == 0) {
+        numberPizzaBasket++;
+        numberhammushrooms++;
+        $(`.cardSelectedPizzaTxtNamehammushrooms`).text(`Мініроли з шинкою та грибами`);
+        $(`.priceCardSelectedPizzahammushrooms`).text(`${99} Грн`);
+        $(`.cardSelectedPizzahammushrooms`).show();
+        totalPrice += 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberhammushrooms >= 1) {
+        $(`.numberPizzahammushrooms`).text(numberhammushrooms + 1);
+        numberhammushrooms++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzahammushrooms`).text(`${99 * numberhammushrooms} Грн`);
+        totalPrice += 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzahammushrooms`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzahammushrooms`).click(function () {
+    $(`.numberPizzahammushrooms`).text(numberhammushrooms + 1);
+    numberhammushrooms++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzahammushrooms`).text(`${numberhammushrooms * numberColaZero} Грн`);
+    totalPrice += 99;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzahammushrooms`).click(function () {
+    if (numberhammushrooms <= 1) {
+        $(`.priceCardSelectedPizzahammushrooms`).text(`${numberhammushrooms * numberColaZero} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberhammushrooms = 0;
+        $(`.cardSelectedPizzahammushrooms`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberhammushrooms > 0) {
+        numberhammushrooms--;
+        $(`.numberPizzahammushrooms`).text(numberhammushrooms);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzahammushrooms`).text(`${99 * numberhammushrooms} Грн`);
+        totalPrice -= 99;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberkhlebets = 0;
+$(`.sitessSelectionAddCartBtnkhlebets`).click(function () {
+    if (numberkhlebets == 0) {
+        numberPizzaBasket++;
+        numberkhlebets++;
+        $(`.cardSelectedPizzaTxtNamekhlebets`).text(`Хлібці з шинкою та грибами`);
+        $(`.priceCardSelectedPizzakhlebets`).text(`${138} Грн`);
+        $(`.cardSelectedPizzakhlebets`).show();
+        totalPrice += 138;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberkhlebets >= 1) {
+        $(`.numberPizzakhlebets`).text(numberkhlebets + 1);
+        numberkhlebets++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzakhlebets`).text(`${138 * numberkhlebets} Грн`);
+        totalPrice += 138;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzakhlebets`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzakhlebets`).click(function () {
+    $(`.numberPizzakhlebets`).text(numberkhlebets + 1);
+    numberkhlebets++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzakhlebets`).text(`${numberkhlebets * 138} Грн`);
+    totalPrice += 138;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzakhlebets`).click(function () {
+    if (numberkhlebets <= 1) {
+        $(`.priceCardSelectedPizzakhlebets`).text(`${numberkhlebets * 138} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 138;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberkhlebets = 0;
+        $(`.cardSelectedPizzakhlebets`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberkhlebets > 0) {
+        numberkhlebets--;
+        $(`.numberPizzakhlebets`).text(numberkhlebets);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzakhlebets`).text(`${138 * numberkhlebets} Грн`);
+        totalPrice -= 138;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberproduct = 0;
+$(`.dessertsSelectionAddCartBtnproduct`).click(function () {
+    if (numberproduct == 0) {
+        numberPizzaBasket++;
+        numberproduct++;
+        $(`.cardSelectedPizzaTxtNameproduct`).text(`Сіннамон роли`);
+        $(`.priceCardSelectedPizzaproduct`).text(`${95} Грн`);
+        $(`.cardSelectedPizzaproduct`).show();
+        totalPrice += 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberproduct >= 1) {
+        $(`.numberPizzaproduct`).text(numberproduct + 1);
+        numberproduct++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzaproduct`).text(`${95 * numberproduct} Грн`);
+        totalPrice += 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzaproduct`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzaproduct`).click(function () {
+    $(`.numberPizzaproduct`).text(numberproduct + 1);
+    numberproduct++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzaproduct`).text(`${numberproduct * 95} Грн`);
+    totalPrice += 95;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzaproduct`).click(function () {
+    if (numberproduct <= 1) {
+        $(`.priceCardSelectedPizzaproduct`).text(`${numberproduct * 95} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberproduct = 0;
+        $(`.cardSelectedPizzaproduct`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberproduct > 0) {
+        numberproduct--;
+        $(`.numberPizzaproduct`).text(numberproduct);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzaproduct`).text(`${95 * numberproduct} Грн`);
+        totalPrice -= 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numbervyshneiu = 0;
+$(`.dessertsSelectionAddCartBtnvyshneiu`).click(function () {
+    if (numbervyshneiu == 0) {
+        numberPizzaBasket++;
+        numbervyshneiu++;
+        $(`.cardSelectedPizzaTxtNamevyshneiu`).text(`Вишневі роли`);
+        $(`.priceCardSelectedPizzavyshneiu`).text(`${95} Грн`);
+        $(`.cardSelectedPizzavyshneiu`).show();
+        totalPrice += 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numbervyshneiu >= 1) {
+        $(`.numberPizzavyshneiu`).text(numbervyshneiu + 1);
+        numbervyshneiu++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzavyshneiu`).text(`${95 * numbervyshneiu} Грн`);
+        totalPrice += 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzavyshneiu`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzavyshneiu`).click(function () {
+    $(`.numberPizzavyshneiu`).text(numbervyshneiu + 1);
+    numbervyshneiu++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzavyshneiu`).text(`${numbervyshneiu * 95} Грн`);
+    totalPrice += 95;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzavyshneiu`).click(function () {
+    if (numbervyshneiu <= 1) {
+        $(`.priceCardSelectedPizzavyshneiu`).text(`${numbervyshneiu * 95} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numbervyshneiu = 0;
+        $(`.cardSelectedPizzavyshneiu`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numbervyshneiu > 0) {
+        numbervyshneiu--;
+        $(`.numberPizzavyshneiu`).text(numbervyshneiu);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzavyshneiu`).text(`${95 * numbervyshneiu} Грн`);
+        totalPrice -= 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberchocoroll = 0;
+$(`.dessertsSelectionAddCartBtnchocoroll`).click(function () {
+    if (numberchocoroll == 0) {
+        numberPizzaBasket++;
+        numberchocoroll++;
+        $(`.cardSelectedPizzaTxtNamechocoroll`).text(`Шоколадні роли`);
+        $(`.priceCardSelectedPizzachocoroll`).text(`${95} Грн`);
+        $(`.cardSelectedPizzachocoroll`).show();
+        totalPrice += 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberchocoroll >= 1) {
+        $(`.numberPizzachocoroll`).text(numberchocoroll + 1);
+        numberchocoroll++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzachocoroll`).text(`${95 * numberchocoroll} Грн`);
+        totalPrice += 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzachocoroll`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzachocoroll`).click(function () {
+    $(`.numberPizzachocoroll`).text(numberchocoroll + 1);
+    numberchocoroll++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzachocoroll`).text(`${numberchocoroll * 95} Грн`);
+    totalPrice += 95;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzachocoroll`).click(function () {
+    if (numberchocoroll <= 1) {
+        $(`.priceCardSelectedPizzachocoroll`).text(`${numberchocoroll * 95} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberchocoroll = 0;
+        $(`.cardSelectedPizzachocoroll`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberchocoroll > 0) {
+        numberchocoroll--;
+        $(`.numberPizzachocoroll`).text(numberchocoroll);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzachocoroll`).text(`${95 * numberchocoroll} Грн`);
+        totalPrice -= 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numberkrem = 0;
+$(`.dessertsSelectionAddCartBtnkrem`).click(function () {
+    if (numberkrem == 0) {
+        numberPizzaBasket++;
+        numberkrem++;
+        $(`.cardSelectedPizzaTxtNamekrem`).text(`Крем-сир роли`);
+        $(`.priceCardSelectedPizzakrem`).text(`${95} Грн`);
+        $(`.cardSelectedPizzakrem`).show();
+        totalPrice += 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numberkrem >= 1) {
+        $(`.numberPizzakrem`).text(numberkrem + 1);
+        numberkrem++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzakrem`).text(`${95 * numberkrem} Грн`);
+        totalPrice += 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzakrem`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzakrem`).click(function () {
+    $(`.numberPizzakrem`).text(numberkrem + 1);
+    numberkrem++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzakrem`).text(`${numberkrem * 95} Грн`);
+    totalPrice += 95;
+    $(`.price`).text(`${totalPrice} Грн`);
+})
+
+$(`.arrowMinuscardSelectedPizzakrem`).click(function () {
+    if (numberkrem <= 1) {
+        $(`.priceCardSelectedPizzakrem`).text(`${numberkrem * 95} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numberkrem = 0;
+        $(`.cardSelectedPizzakrem`).hide();
+        if (numberPizzaBasket == 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numberkrem > 0) {
+        numberkrem--;
+        $(`.numberPizzakrem`).text(numberkrem);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzakrem`).text(`${95 * numberkrem} Грн`);
+        totalPrice -= 95;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
+
+let numbepizzaConstructor = 0;
+$(`.payBtnpizzaConstructor`).click(function () {
+    if (numbepizzaConstructor == 0) {
+        numberPizzaBasket++;
+        numbepizzaConstructor++;
+        $(`.cardSelectedPizzaTxtNamepizzaConstructor`).text(`Піца конструктор`);
+        $(`.priceCardSelectedPizzapizzaConstructor`).text(`${priseProduct} Грн`);
+        $(`.cardSelectedPizzapizzaConstructor`).show();
+        totalPrice += priseProduct;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    } else if (numbepizzaConstructor >= 1) {
+        $(`.numberPizzapizzaConstructor`).text(numbepizzaConstructor + 1);
+        numbepizzaConstructor++;
+        numberPizzaBasket++;
+        $(`.priceCardSelectedPizzapizzaConstructor`).text(`${priseProduct * numbepizzaConstructor} Грн`);
+        totalPrice += priseProduct;
+        $(`.price`).text(`${totalPrice} Грн`);
+        $(`.cardSelectedPizzapizzaConstructor`).show();
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+    }
+});
+
+$(`.arrowPluscardSelectedPizzapizzaConstructor`).click(function () {
+    $(`.numberPizzapizzaConstructor`).text(numbepizzaConstructor + 1);
+    numbepizzaConstructor++;
+    numberPizzaBasket++;
+    $(`.txtNmberOrders`).text(numberPizzaBasket);
+    $(`.priceCardSelectedPizzapizzaConstructor`).text(`${numbepizzaConstructor * 95} Грн`);
+    totalPrice += priseProduct;
+    $(`.price`).text(`${totalPrice} Грн`);
+});
+
+$(`.arrowMinuscardSelectedPizzapizzaConstructor`).click(function () {
+    if (numbepizzaConstructor <= 1) {
+        $(`.priceCardSelectedPizzapizzaConstructor`).text(`${numbepizzaConstructor * 95} Грн`);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        totalPrice -= priseProduct;
+        $(`.price`).text(`${totalPrice} Грн`);
+        numbepizzaConstructor = 0;
+        $(`.cardSelectedPizzapizzaConstructor`).hide();
+        if (numberPizzaBasket === 0){
+            $(`.SelectedOrderContainer`).hide();
+        }
+    } else if (numbepizzaConstructor > 0) {
+        numbepizzaConstructor--;
+        $(`.numberPizzapizzaConstructor`).text(numbepizzaConstructor);
+        numberPizzaBasket--;
+        $(`.txtNmberOrders`).text(numberPizzaBasket);
+        $(`.priceCardSelectedPizzapizzaConstructor`).text(`${priseProduct * numbepizzaConstructor} Грн`);
+        totalPrice -= priseProduct;
+        $(`.price`).text(`${totalPrice} Грн`);
+    }
+});
 
 // Сторінка піца конструктора
 $(`.popupContainer`).hide();
